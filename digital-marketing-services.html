@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Marketing Services | Best Web Developer</title>
+    <meta
+      name="description"
+      content="Best Web Developer is your premier web design, development, ecommerce, SEO, and digital marketing partner."
+    />
+    <style>
+      :root {
+        --bg: #070b1a;
+        --panel: #101937;
+        --panel-soft: #131f44;
+        --text: #e8eeff;
+        --muted: #9aacd8;
+        --primary: #64b5ff;
+        --primary-2: #9b7bff;
+        --accent: #2ef2bf;
+        --danger: #ff6b9a;
+        --ring: rgba(100, 181, 255, 0.45);
+        --shadow: 0 10px 30px rgba(4, 8, 22, 0.5);
+        --radius: 16px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        font-family: Inter, Segoe UI, Roboto, Arial, sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(1200px 500px at 90% -10%, rgba(155, 123, 255, 0.2), transparent 45%),
+          radial-gradient(900px 460px at -10% 10%, rgba(46, 242, 191, 0.16), transparent 40%),
+          var(--bg);
+        line-height: 1.6;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .container {
+        width: min(1140px, 92vw);
+        margin: 0 auto;
+      }
+
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 30;
+        backdrop-filter: blur(10px);
+        background: rgba(7, 11, 26, 0.7);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .topbar-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 0.9rem 0;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.2px;
+      }
+
+      .brand-mark {
+        width: 34px;
+        height: 34px;
+        border-radius: 10px;
+        background: linear-gradient(135deg, var(--primary), var(--primary-2));
+        box-shadow: 0 8px 24px rgba(100, 181, 255, 0.45);
+      }
+
+      .contact-chip {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.55rem;
+        font-size: 0.9rem;
+        color: var(--muted);
+      }
+
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.35rem 0.65rem;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      header.hero {
+        padding: 3.6rem 0 2.2rem;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 1.4rem;
+      }
+
+      .hero-card,
+      .side-card {
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+        border: 1px solid rgba(255, 255, 255, 0.11);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+      }
+
+      .hero-card {
+        padding: 2rem;
+      }
+
+      .eyebrow {
+        display: inline-block;
+        font-size: 0.78rem;
+        letter-spacing: 1.4px;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 0.8rem;
+      }
+
+      h1,
+      h2,
+      h3 {
+        margin: 0;
+        line-height: 1.22;
+      }
+
+      h1 {
+        font-size: clamp(1.7rem, 3vw, 2.75rem);
+      }
+
+      .hero-lead {
+        color: var(--muted);
+        margin: 1rem 0 1.6rem;
+      }
+
+      .cta-row {
+        display: flex;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        border: none;
+        padding: 0.75rem 1.05rem;
+        border-radius: 10px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      .btn-primary {
+        color: #05122a;
+        background: linear-gradient(120deg, var(--primary), var(--accent));
+      }
+
+      .btn-secondary {
+        color: var(--text);
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+      }
+
+      .side-card {
+        padding: 1.2rem;
+      }
+
+      .kpis {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.7rem;
+        margin-top: 0.9rem;
+      }
+
+      .kpi {
+        background: var(--panel);
+        border: 1px solid rgba(255, 255, 255, 0.09);
+        border-radius: 12px;
+        padding: 0.8rem;
+      }
+
+      .kpi strong {
+        display: block;
+        font-size: 1.08rem;
+      }
+
+      .muted {
+        color: var(--muted);
+      }
+
+      main {
+        padding-bottom: 3rem;
+      }
+
+      .section-head {
+        margin: 2.2rem 0 1rem;
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1rem;
+      }
+
+      .service {
+        background: var(--panel-soft);
+        border: 1px solid rgba(255, 255, 255, 0.09);
+        border-radius: 14px;
+        padding: 1rem;
+        transition: transform 0.2s ease, border-color 0.2s ease;
+      }
+
+      .service:hover {
+        transform: translateY(-3px);
+        border-color: rgba(155, 123, 255, 0.5);
+      }
+
+      .service h3 {
+        font-size: 1rem;
+      }
+
+      .service ul {
+        margin: 0.55rem 0 0;
+        padding-left: 1rem;
+      }
+
+      .service li {
+        color: var(--muted);
+        margin: 0.34rem 0;
+      }
+
+      .highlight {
+        margin-top: 2rem;
+        background: linear-gradient(120deg, rgba(100, 181, 255, 0.18), rgba(155, 123, 255, 0.16));
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: var(--radius);
+        padding: 1.1rem;
+      }
+
+      footer {
+        margin-top: 2.3rem;
+        padding: 1.2rem;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.03);
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(14px);
+        transition: opacity 0.55s ease, transform 0.55s ease;
+      }
+
+      .reveal.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @media (max-width: 960px) {
+        .hero-grid,
+        .services-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 520px) {
+        .topbar-wrap {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .hero-card,
+        .side-card {
+          padding: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="topbar">
+      <div class="container topbar-wrap">
+        <a class="brand" href="#top">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>Best Web Developer</span>
+        </a>
+        <div class="contact-chip">
+          <span class="chip">📞 +966510451995</span>
+          <span class="chip">🌐 bestwebdeveloper.org</span>
+        </div>
+      </div>
+    </div>
+
+    <header id="top" class="hero container">
+      <div class="hero-grid">
+        <article class="hero-card reveal">
+          <span class="eyebrow">Digital Marketing Services</span>
+          <h1>Best Web Developer — Your Premier Web Design, Development & Digital Marketing Partner</h1>
+          <p class="hero-lead">
+            Welcome to Best Web Developer, the best web design agency that blends creativity, technology, and strategy
+            to build stunning digital experiences. From professional web design services to robust web development
+            services and full digital marketing strategy, we provide everything under one roof.
+          </p>
+          <div class="cta-row">
+            <button class="btn btn-primary" onclick="scrollToSection('services')">Explore Services</button>
+            <a class="btn btn-secondary" href="tel:+966510451995">Call Now</a>
+          </div>
+        </article>
+
+        <aside class="side-card reveal">
+          <h2 style="font-size: 1.1rem">Corporate Value Snapshot</h2>
+          <p class="muted" style="margin: 0.45rem 0 0.85rem">
+            A full-service agency for ecommerce, WordPress, Shopify, SEO, content, social media, branding, and mobile apps.
+          </p>
+          <div class="kpis">
+            <div class="kpi">
+              <strong>360°</strong>
+              <span class="muted">End-to-end services</span>
+            </div>
+            <div class="kpi">
+              <strong>ROI Focused</strong>
+              <span class="muted">Performance-first execution</span>
+            </div>
+            <div class="kpi">
+              <strong>Transparent</strong>
+              <span class="muted">Clear communication</span>
+            </div>
+            <div class="kpi">
+              <strong>On-Time</strong>
+              <span class="muted">Dedicated project delivery</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </header>
+
+    <main class="container">
+      <section id="services">
+        <div class="section-head reveal">
+          <h2>Our Complete Service Portfolio</h2>
+          <p class="muted">Designed to be beautiful, functional, scalable, and growth-oriented for modern businesses.</p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service reveal">
+            <h3>Web Design Services</h3>
+            <ul>
+              <li>Custom web page design and UI/UX design.</li>
+              <li>Mobile responsiveness and conversion-focused interfaces.</li>
+              <li>Interactive designs aligned with brand identity.</li>
+            </ul>
+          </article>
+
+          <article class="service reveal">
+            <h3>Expert Web Development Services</h3>
+            <ul>
+              <li>Backend development and custom web development.</li>
+              <li>Secure, scalable, and fast architecture.</li>
+              <li>Web application development for data-driven platforms.</li>
+            </ul>
+          </article>
+
+          <article class="service reveal">
+            <h3>Ecommerce Web Design</h3>
+            <ul>
+              <li>Shopify business website design and optimization.</li>
+              <li>WordPress + WooCommerce ecommerce integrations.</li>
+              <li>Smooth checkout, inventory flow, and performance tuning.</li>
+            </ul>
+          </article>
+
+          <article class="service reveal">
+            <h3>SEO & Search Engine Services</h3>
+            <ul>
+              <li>Keyword research, on-page SEO, technical SEO, link building.</li>
+              <li>Local SEO for “SEO services near me” search intent.</li>
+              <li>Search engine marketing and pay-per-click campaign support.</li>
+            </ul>
+          </article>
+
+          <article class="service reveal">
+            <h3>Email Marketing Services</h3>
+            <ul>
+              <li>Tailored campaigns to nurture leads and improve retention.</li>
+              <li>Automation and personalization via top email platforms.</li>
+              <li>Template design and audience segmentation for engagement.</li>
+            </ul>
+          </article>
+
+          <article class="service reveal">
+            <h3>Content Marketing</h3>
+            <ul>
+              <li>Blogs, articles, infographics, and multimedia planning.</li>
+              <li>Content strategy aligned to SEO and brand objectives.</li>
+              <li>Distribution and promotion for maximum reach and impact.</li>
+            </ul>
+          </article>
+
+          <article class="service reveal">
+            <h3>Social Media Management & Advertising</h3>
+            <ul>
+              <li>Creative posts, calendars, and daily audience interactions.</li>
+              <li>Targeted ads to increase leads, reach, and traffic.</li>
+              <li>Community-building to strengthen brand loyalty.</li>
+            </ul>
+          </article>
+
+          <article class="service reveal">
+            <h3>Branding Designer & Logo Design</h3>
+            <ul>
+              <li>Comprehensive visual identity and brand voice strategy.</li>
+              <li>Distinctive logo concepts from idea to final delivery.</li>
+              <li>Consistent and professional corporate brand imagery.</li>
+            </ul>
+          </article>
+
+          <article class="service reveal">
+            <h3>Mobile Development Agencies</h3>
+            <ul>
+              <li>Android app development for startup to enterprise scale.</li>
+              <li>Design, coding, testing, deployment, and maintenance.</li>
+              <li>Secure, scalable app experiences for users on the go.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="highlight reveal">
+        <h2 style="font-size: 1.2rem">Product Design — Innovation Meets Functionality</h2>
+        <p class="muted" style="margin: 0.45rem 0 0">
+          Our product design services blend creativity and usability to deliver user-centric digital products that delight users and drive business growth.
+        </p>
+      </section>
+
+      <footer class="reveal">
+        <h3 style="font-size: 1.05rem; margin-bottom: 0.45rem">Why Choose Best Web Developer?</h3>
+        <ul style="margin: 0; padding-left: 1.1rem">
+          <li>Best web design agency and best SEO firm expertise.</li>
+          <li>Integrated digital marketing: SEO, email, content, social media advertising.</li>
+          <li>Skilled developers, branding designers, and mobile specialists under one team.</li>
+          <li>Transparent communication, dedicated project management, and on-time delivery.</li>
+          <li>Strong focus on quality, ROI, and client satisfaction.</li>
+        </ul>
+      </footer>
+    </main>
+
+    <script>
+      function scrollToSection(id) {
+        const section = document.getElementById(id);
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('show');
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15 }
+      );
+
+      document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    </script>
+  </body>
+</html>
