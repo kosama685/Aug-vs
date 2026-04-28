@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Content Marketing Services by Best Web Developer — strategic content planning, SEO writing, distribution, and performance reporting for long-term growth." />
+  <title>Content Marketing Services | Best Web Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #030712;
+      --surface: rgba(10, 19, 40, 0.78);
+      --surface-solid: #0d1c39;
+      --line: rgba(165, 186, 226, 0.24);
+      --text: #e6eeff;
+      --muted: #a8b8da;
+      --primary: #37b5ff;
+      --secondary: #70ffcf;
+      --accent: #8f9dff;
+      --radius: 18px;
+      --shadow: 0 24px 56px rgba(0, 0, 0, 0.32);
+      --max: 1140px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 10% 8%, rgba(55, 181, 255, 0.24), transparent 35%),
+        radial-gradient(circle at 88% 12%, rgba(112, 255, 207, 0.2), transparent 32%),
+        radial-gradient(circle at 70% 82%, rgba(143, 157, 255, 0.2), transparent 33%),
+        var(--bg);
+      line-height: 1.6;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 2.4rem));
+      margin: 0 auto;
+    }
+
+    .glass {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      backdrop-filter: blur(9px);
+      box-shadow: var(--shadow);
+    }
+
+    .hero {
+      padding: 5.6rem 0 3.6rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pill {
+      display: inline-flex;
+      padding: .45rem .84rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      font-size: .78rem;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      color: var(--secondary);
+      background: rgba(255,255,255,.03);
+      font-weight: 700;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.12fr .88fr;
+      gap: 1.4rem;
+      align-items: center;
+    }
+
+    h1 {
+      margin: .95rem 0 .7rem;
+      line-height: 1.13;
+      font-size: clamp(2rem, 5vw, 3.3rem);
+      letter-spacing: -.02em;
+      max-width: 18ch;
+    }
+
+    .gradient-text {
+      background: linear-gradient(118deg, #68d2ff 0%, #7affcb 46%, #cfd7ff 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 58ch;
+    }
+
+    .cta-row {
+      margin: 1.35rem 0 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      border: 1px solid transparent;
+      padding: .78rem 1.12rem;
+      text-decoration: none;
+      font-weight: 700;
+      transition: transform .24s ease, box-shadow .24s ease;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-primary {
+      background: linear-gradient(120deg, #31adff, #76f3ff 52%, #78ffcf);
+      color: #051427;
+      box-shadow: 0 14px 30px rgba(55, 181, 255, .34);
+    }
+
+    .btn-secondary {
+      border-color: var(--line);
+      color: var(--text);
+      background: rgba(255,255,255,.02);
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: .94rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: .9rem;
+    }
+
+    .hero-card {
+      padding: 1.2rem;
+    }
+
+    .hero-card h3 {
+      margin: 0 0 .8rem;
+      font-size: 1.06rem;
+    }
+
+    .service-points {
+      display: grid;
+      gap: .65rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .service-points li {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: .62rem .72rem;
+      background: rgba(255,255,255,.025);
+      color: var(--muted);
+    }
+
+    .section { padding: 1.1rem 0 3.7rem; }
+
+    .head {
+      text-align: center;
+      margin-bottom: 1.8rem;
+    }
+
+    .head h2 {
+      margin: .72rem 0;
+      font-size: clamp(1.45rem, 3vw, 2.35rem);
+      line-height: 1.2;
+      letter-spacing: -.015em;
+    }
+
+    .lead {
+      margin: 0 auto;
+      max-width: 72ch;
+      color: var(--muted);
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: .95rem;
+    }
+
+    .card {
+      padding: 1rem;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.01));
+      transition: .2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(55, 181, 255, .44);
+    }
+
+    .card h3 {
+      margin: .2rem 0 .42rem;
+      font-size: 1.03rem;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .96rem;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: .7rem;
+    }
+
+    .list li {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: .66rem .74rem;
+      background: rgba(255,255,255,.02);
+      color: var(--muted);
+    }
+
+    .cta {
+      padding: 1.35rem;
+      display: grid;
+      gap: .85rem;
+    }
+
+    .contact {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: .8rem;
+    }
+
+    .contact .item {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: .7rem;
+      background: rgba(255,255,255,.03);
+    }
+
+    .label {
+      display: block;
+      font-size: .73rem;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      color: var(--secondary);
+      margin-bottom: .2rem;
+      font-weight: 700;
+    }
+
+    a.inline-link {
+      color: #93e7ff;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    footer {
+      padding: 1.1rem 0 2rem;
+      color: var(--muted);
+      text-align: center;
+      font-size: .9rem;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .56s ease, transform .56s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .split {
+        grid-template-columns: 1fr;
+      }
+
+      .grid-3 { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 680px) {
+      .hero { padding-top: 4.7rem; }
+      .grid-3,
+      .contact { grid-template-columns: 1fr; }
+      .container { width: min(var(--max), calc(100% - 1.2rem)); }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="pill">Best Web Developer • Trusted Marketing Agency</span>
+        <h1>Content Marketing Services with a <span class="gradient-text">Corporate, Conversion-Focused Approach</span></h1>
+        <p>
+          In today’s competitive digital world, delivering the right message to the right audience is crucial.
+          Best Web Developer provides strategic content marketing solutions that amplify your brand voice,
+          engage your target market, and build long-term business growth.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#consultation">Schedule a Free Consultation</a>
+          <a class="btn btn-secondary" href="#services">Explore Services</a>
+        </div>
+        <div class="meta">
+          <span>✔ Marketing planning &amp; brand strategy</span>
+          <span>✔ SEO-optimized corporate content</span>
+          <span>✔ Multi-channel distribution &amp; performance tracking</span>
+        </div>
+      </div>
+
+      <aside class="hero-card glass reveal">
+        <h3>Why businesses choose us</h3>
+        <ul class="service-points">
+          <li>Tailored marketing strategy aligned with your business goals.</li>
+          <li>High-quality blogs, articles, infographics, and videos.</li>
+          <li>Data-driven optimization to improve visibility and conversions.</li>
+          <li>Reliable support from a creative agency that values long-term partnerships.</li>
+        </ul>
+      </aside>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="head reveal">
+          <span class="pill">Comprehensive Planning</span>
+          <h2>Marketing Planning &amp; Brand Strategy That Builds Authority</h2>
+          <p class="lead">
+            Successful marketing starts with a strong foundation. Our team works closely with your business to create
+            a tailored strategy that includes market research, competitor analysis, messaging, and brand positioning.
+            The goal: a consistent corporate identity that resonates with your audience and drives measurable impact.
+          </p>
+        </div>
+
+        <div class="grid-3" id="services">
+          <article class="card reveal">
+            <h3>Strategy &amp; Marketing Alignment</h3>
+            <p>We design targeted content strategies that fit your larger strategy &amp; marketing roadmap.</p>
+          </article>
+          <article class="card reveal">
+            <h3>SEO Content Execution</h3>
+            <p>Every asset is optimized for search intent, helping your brand rank higher and get discovered faster.</p>
+          </article>
+          <article class="card reveal">
+            <h3>Creative Content Production</h3>
+            <p>From educational blog posts to visual storytelling, we create content that informs and converts.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container split">
+        <article class="glass card reveal" style="padding: 1.2rem;">
+          <h3>Our Content Marketing Services Include</h3>
+          <ul class="list">
+            <li>Content Strategy Development</li>
+            <li>SEO Content Writing</li>
+            <li>Blog &amp; Article Creation</li>
+            <li>Social Media Content</li>
+            <li>Video and Visual Content Production</li>
+            <li>Content Distribution and Promotion</li>
+            <li>Performance Tracking &amp; Reporting</li>
+          </ul>
+        </article>
+
+        <article class="glass card reveal" style="padding: 1.2rem;">
+          <h3>Designed for Modern Digital Agency Marketing</h3>
+          <p style="color: var(--muted); margin-top: 0;">
+            Whether you are searching for “marketing near me” or need a dedicated partner to scale your digital
+            marketing efforts, Best Web Developer delivers campaign-ready content with consistent brand quality.
+          </p>
+          <p style="color: var(--muted);">
+            We combine creativity and analytics so every piece of content supports your business objectives,
+            reflects your brand personality, and contributes to sustained growth.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="consultation">
+      <div class="container">
+        <article class="glass cta reveal">
+          <span class="pill">Ready to Elevate Your Content Marketing?</span>
+          <h2 style="margin: .2rem 0;">Partner with Best Web Developer — the Creative Agency Businesses Trust</h2>
+          <p style="margin: 0; color: var(--muted);">
+            Connect with us to attract, engage, and convert your ideal audience with powerful, strategic content.
+            Visit <a class="inline-link" href="https://bestwebdeveloper.org" target="_blank" rel="noopener">bestwebdeveloper.org</a>
+            to learn more and schedule your free consultation.
+          </p>
+
+          <div class="contact">
+            <div class="item">
+              <span class="label">Business Website</span>
+              <a class="inline-link" href="https://bestwebdeveloper.org" target="_blank" rel="noopener">bestwebdeveloper.org</a>
+            </div>
+            <div class="item">
+              <span class="label">Mobile Number</span>
+              <a class="inline-link" href="tel:+966510451995">+966510451995</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Best Web Developer. Content marketing with strategy, creativity, and measurable performance.
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+  </script>
+</body>
+</html>
