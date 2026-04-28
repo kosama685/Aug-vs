@@ -1,0 +1,547 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Backend Development & Ecommerce Solutions by Best Web Developer — scalable backend systems, Shopify development, WordPress development, and custom web solutions."
+  />
+  <title>Backend Development & Ecommerce Solutions | Best Web Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      --bg: #020617;
+      --panel: rgba(15, 23, 42, 0.82);
+      --panel-strong: rgba(15, 23, 42, 0.95);
+      --line: rgba(148, 163, 184, 0.24);
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --primary: #22d3ee;
+      --secondary: #38bdf8;
+      --accent: #34d399;
+      --warn: #fbbf24;
+      --radius: 18px;
+      --shadow: 0 26px 48px rgba(2, 6, 23, 0.4);
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+      background:
+        radial-gradient(circle at 10% 10%, rgba(34, 211, 238, 0.19), transparent 28%),
+        radial-gradient(circle at 90% 20%, rgba(56, 189, 248, 0.18), transparent 30%),
+        radial-gradient(circle at 75% 86%, rgba(52, 211, 153, 0.16), transparent 32%),
+        var(--bg);
+      min-height: 100vh;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 2rem));
+      margin: 0 auto;
+    }
+
+    .glass {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow);
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      border-bottom: 1px solid var(--line);
+      background: rgba(2, 6, 23, 0.82);
+      backdrop-filter: blur(10px);
+    }
+
+    .topbar-wrap {
+      min-height: 68px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      padding: 0.6rem 0;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .brand strong {
+      color: var(--primary);
+      font-weight: 900;
+    }
+
+    .quick-links {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .chip {
+      display: inline-flex;
+      text-decoration: none;
+      color: var(--text);
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      padding: 0.44rem 0.85rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      background: rgba(148, 163, 184, 0.08);
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .chip:hover {
+      border-color: rgba(56, 189, 248, 0.65);
+      transform: translateY(-2px);
+    }
+
+    .hero {
+      padding: 4.4rem 0 2.3rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.12fr 0.88fr;
+      gap: 1.1rem;
+      align-items: stretch;
+    }
+
+    .hero-card,
+    .side-card {
+      padding: 1.4rem;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      padding: 0.42rem 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.71rem;
+      font-weight: 700;
+      color: var(--accent);
+      background: rgba(52, 211, 153, 0.1);
+    }
+
+    h1 {
+      margin: 0.95rem 0 0.9rem;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      font-size: clamp(1.95rem, 4.8vw, 3.4rem);
+    }
+
+    .gradient {
+      background: linear-gradient(120deg, #67e8f9 0%, #7dd3fc 47%, #6ee7b7 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p,
+    .section p,
+    li {
+      color: var(--muted);
+    }
+
+    .actions {
+      margin-top: 1.2rem;
+      display: flex;
+      gap: 0.7rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      text-decoration: none;
+      border-radius: 12px;
+      padding: 0.74rem 1.05rem;
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: 1px solid transparent;
+      transition: transform 0.2s ease;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-primary {
+      color: #03222c;
+      background: linear-gradient(120deg, var(--primary), var(--secondary), var(--accent));
+    }
+
+    .btn-secondary {
+      color: var(--text);
+      border-color: var(--line);
+      background: rgba(148, 163, 184, 0.08);
+    }
+
+    .stats {
+      margin-top: 1rem;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.72rem;
+    }
+
+    .stat {
+      border-radius: 14px;
+      padding: 0.82rem;
+      background: rgba(15, 23, 42, 0.72);
+      border: 1px solid var(--line);
+    }
+
+    .stat strong {
+      color: var(--primary);
+      font-size: 1.38rem;
+      line-height: 1;
+      display: block;
+      font-weight: 800;
+    }
+
+    .stat small {
+      margin-top: 0.35rem;
+      display: block;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .checklist {
+      margin: 0;
+      padding-left: 1rem;
+      display: grid;
+      gap: 0.62rem;
+    }
+
+    .checklist li::marker { color: var(--warn); }
+
+    .section {
+      padding: 1rem 0 2.6rem;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 1.2rem;
+    }
+
+    .section-header h2 {
+      margin: 0;
+      font-size: clamp(1.45rem, 3.4vw, 2.15rem);
+      letter-spacing: -0.02em;
+    }
+
+    .section-header p {
+      margin: 0.55rem auto 0;
+      max-width: 72ch;
+    }
+
+    .services,
+    .why-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.92rem;
+    }
+
+    .panel {
+      padding: 1.1rem;
+      border-radius: 16px;
+      background: var(--panel-strong);
+      border: 1px solid var(--line);
+    }
+
+    .panel h3 {
+      margin: 0;
+      font-size: 1.1rem;
+      letter-spacing: -0.01em;
+    }
+
+    .panel p {
+      margin: 0.6rem 0 0;
+    }
+
+    .highlight {
+      border-left: 3px solid var(--accent);
+      padding-left: 0.8rem;
+      margin-top: 0.8rem;
+    }
+
+    .cta {
+      padding: 2.2rem 0 3.4rem;
+    }
+
+    .cta-card {
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .cta-card h2 {
+      margin: 0;
+      font-size: clamp(1.5rem, 3.5vw, 2.3rem);
+      letter-spacing: -0.02em;
+    }
+
+    .cta-card p {
+      margin: 0.8rem auto 0;
+      max-width: 65ch;
+      color: var(--muted);
+    }
+
+    .contact-box {
+      margin-top: 1.1rem;
+      display: flex;
+      gap: 0.7rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .contact-badge {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 0.48rem 0.92rem;
+      font-weight: 600;
+      background: rgba(148, 163, 184, 0.08);
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+
+    .fade-up.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      text-align: center;
+      color: var(--muted);
+      padding: 1rem 0 1.4rem;
+      font-size: 0.87rem;
+    }
+
+    @media (max-width: 960px) {
+      .hero-grid,
+      .services,
+      .why-list {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 3.4rem;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .topbar-wrap {
+        justify-content: center;
+      }
+
+      .brand {
+        text-align: center;
+      }
+
+      .btn,
+      .contact-badge,
+      .chip {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-wrap">
+      <div class="brand">Best <strong>Web Developer</strong></div>
+      <nav class="quick-links">
+        <a class="chip" href="#services">Services</a>
+        <a class="chip" href="#why-us">Why Choose Us</a>
+        <a class="chip" href="#contact">Free Consultation</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="hero-grid">
+        <article class="hero-card glass fade-up">
+          <span class="eyebrow">Backend & Ecommerce Experts</span>
+          <h1>
+            Backend Development & Ecommerce Solutions
+            <span class="gradient">by Best Web Developer</span>
+          </h1>
+          <p>
+            Are you looking to hire expert developers for your next big project? We specialize in advanced backend
+            development and ecommerce development services that power seamless, scalable, and secure digital
+            experiences. Whether you need a custom-built website or a fully functional Shopify business website,
+            we are your trusted partner for top-quality development solutions.
+          </p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#contact">Get Free Consultation</a>
+            <a class="btn btn-secondary" href="https://bestwebdeveloper.org" target="_blank" rel="noopener noreferrer">Visit bestwebdeveloper.org</a>
+          </div>
+          <div class="stats" aria-label="quick highlights">
+            <div class="stat">
+              <strong>Backend</strong>
+              <small>Robust APIs, databases, and server-side logic.</small>
+            </div>
+            <div class="stat">
+              <strong>Shopify</strong>
+              <small>Complete store setup, optimization, and scaling.</small>
+            </div>
+            <div class="stat">
+              <strong>WordPress</strong>
+              <small>Flexible websites with user-friendly management.</small>
+            </div>
+            <div class="stat">
+              <strong>Custom Web</strong>
+              <small>Tailored features for unique business workflows.</small>
+            </div>
+          </div>
+        </article>
+
+        <aside class="side-card glass fade-up">
+          <h2 style="margin-top:0; font-size:1.24rem;">Hire the Best Development Agency Near You</h2>
+          <p>
+            Searching for a reliable development agency near you that delivers robust backend development services?
+            Our experienced developers build the core infrastructure that supports your website or application,
+            ensuring speed, reliability, and scalability.
+          </p>
+          <ul class="checklist">
+            <li>Latest technologies and best practices for secure architecture</li>
+            <li>API development, database design, and optimized server performance</li>
+            <li>Business-specific logic tailored to your exact requirements</li>
+            <li>Long-term support to keep your platform stable and future-ready</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="services" class="section container">
+      <div class="section-header fade-up">
+        <h2>Specialized Development Services</h2>
+        <p>
+          We provide end-to-end development services for ecommerce and business websites, including Shopify,
+          WordPress, and custom platforms.
+        </p>
+      </div>
+
+      <div class="services">
+        <article class="panel fade-up">
+          <h3>Shopify Website Development Services</h3>
+          <p>
+            Looking for Shopify development agency expertise? Our team delivers end-to-end Shopify website services
+            to help businesses launch or upgrade online stores with custom themes, plugins, and integrations.
+          </p>
+          <p class="highlight">
+            Whether you want to set up a new Shopify business website or enhance an existing one, we build for
+            performance and better conversions.
+          </p>
+        </article>
+
+        <article class="panel fade-up">
+          <h3>WordPress & Custom Web Development</h3>
+          <p>
+            In addition to Shopify, Best Web Developer offers expert WordPress development services for flexible,
+            user-friendly websites.
+          </p>
+          <p class="highlight">
+            For complex requirements, we provide custom web development services with tailored features and unique
+            functionality aligned to your business model.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="why-us" class="section container">
+      <div class="section-header fade-up">
+        <h2>Why Choose Best Web Developer?</h2>
+        <p>
+          We combine technical expertise with professional delivery to help you build reliable digital products.
+        </p>
+      </div>
+
+      <div class="why-list">
+        <article class="panel fade-up">
+          <h3>Proven Experience</h3>
+          <p>Recognized by businesses seeking a trusted development agency with strong project outcomes.</p>
+        </article>
+        <article class="panel fade-up">
+          <h3>Specialized Team</h3>
+          <p>Skilled developers for backend, Shopify, WordPress, and custom development solutions.</p>
+        </article>
+        <article class="panel fade-up">
+          <h3>Secure & Scalable Build</h3>
+          <p>Every delivery is focused on security, performance, scalability, and maintainable code quality.</p>
+        </article>
+        <article class="panel fade-up">
+          <h3>Reliable Partnership</h3>
+          <p>Transparent communication, on-time delivery, and ongoing support after launch.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="cta container">
+      <div class="cta-card glass fade-up">
+        <h2>Ready to Build Your Next Website or Application?</h2>
+        <p>
+          Partner with Best Web Developer for reliable backend development, expert ecommerce development,
+          and professional Shopify website services. Visit our backend development services page to learn more
+          and request your free consultation today.
+        </p>
+
+        <div class="contact-box">
+          <a class="contact-badge" href="tel:+966510451995">📞 +966510451995</a>
+          <a class="contact-badge" href="https://bestwebdeveloper.org" target="_blank" rel="noopener noreferrer">🌐 bestwebdeveloper.org</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Best Web Developer. Backend & Ecommerce Solutions.
+  </footer>
+
+  <script>
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.fade-up').forEach((element) => observer.observe(element));
+  </script>
+</body>
+</html>
