@@ -1,0 +1,630 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Innovative Product Design & 3D Modelling Services by Best Web Developer. Concept design, prototyping, realistic 3D models, and animation videos."
+  />
+  <title>Illustration & Modelling Services | Best Web Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      --bg: #040816;
+      --bg-soft: #0c1430;
+      --surface: rgba(15, 25, 62, 0.82);
+      --surface-strong: rgba(20, 34, 83, 0.95);
+      --line: rgba(148, 163, 184, 0.28);
+      --text: #edf2ff;
+      --muted: #b8c4e1;
+      --primary: #67e8f9;
+      --secondary: #a78bfa;
+      --accent: #34d399;
+      --radius: 20px;
+      --shadow: 0 25px 60px rgba(2, 6, 23, 0.55);
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      font-family: "Inter", sans-serif;
+      line-height: 1.65;
+      background:
+        radial-gradient(circle at 12% 10%, rgba(103, 232, 249, 0.26), transparent 30%),
+        radial-gradient(circle at 86% 10%, rgba(167, 139, 250, 0.24), transparent 32%),
+        radial-gradient(circle at 52% 96%, rgba(52, 211, 153, 0.2), transparent 30%),
+        linear-gradient(165deg, var(--bg), #070d21 45%, #040816 100%);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 2.2rem));
+      margin: 0 auto;
+    }
+
+    .glass {
+      border-radius: var(--radius);
+      background: var(--surface);
+      border: 1px solid var(--line);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow);
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(14px);
+      background: rgba(4, 8, 22, 0.85);
+    }
+
+    .nav {
+      min-height: 72px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      padding: 0.6rem 0;
+    }
+
+    .brand {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      font-size: 1.04rem;
+    }
+
+    .brand span { color: var(--primary); }
+
+    .contact-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+    }
+
+    .chip {
+      text-decoration: none;
+      color: var(--text);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 0.44rem 0.82rem;
+      font-size: 0.83rem;
+      font-weight: 600;
+      background: rgba(148, 163, 184, 0.1);
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .chip:hover {
+      transform: translateY(-1px);
+      border-color: rgba(103, 232, 249, 0.6);
+    }
+
+    .hero {
+      padding: 4.8rem 0 2.2rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.12fr 0.88fr;
+      gap: 1rem;
+      align-items: stretch;
+    }
+
+    .hero-main,
+    .hero-side {
+      padding: 1.5rem;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      padding: 0.38rem 0.8rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: rgba(52, 211, 153, 0.11);
+    }
+
+    h1 {
+      margin: 0.8rem 0;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+    }
+
+    .gradient {
+      background: linear-gradient(110deg, #7dd3fc, #c4b5fd 55%, #6ee7b7);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .lead {
+      margin: 0;
+      max-width: 62ch;
+      color: var(--muted);
+    }
+
+    .actions {
+      margin-top: 1.2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      padding: 0.75rem 1.1rem;
+      text-decoration: none;
+      font-weight: 700;
+      transition: transform 0.2s ease;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-primary {
+      color: #041221;
+      background: linear-gradient(120deg, var(--primary), var(--secondary), var(--accent));
+    }
+
+    .btn-secondary {
+      color: var(--text);
+      border: 1px solid var(--line);
+      background: rgba(148, 163, 184, 0.12);
+    }
+
+    .metric-grid {
+      margin-top: 1.1rem;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.7rem;
+    }
+
+    .metric {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: rgba(13, 24, 58, 0.72);
+      padding: 0.8rem;
+    }
+
+    .metric .num {
+      font-size: 1.4rem;
+      line-height: 1;
+      color: var(--primary);
+      font-weight: 800;
+    }
+
+    .metric small {
+      display: block;
+      margin-top: 0.3rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .side-box {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(8, 15, 38, 0.65);
+      padding: 1rem;
+    }
+
+    .side-box + .side-box { margin-top: 0.75rem; }
+
+    .side-box h3 {
+      margin: 0;
+      font-size: 1.05rem;
+      letter-spacing: -0.01em;
+    }
+
+    .side-box p {
+      margin: 0.5rem 0 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    section { padding: 1rem 0 0.9rem; }
+
+    .section-head {
+      margin-bottom: 0.8rem;
+      max-width: 70ch;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(1.45rem, 3vw, 2rem);
+      letter-spacing: -0.02em;
+    }
+
+    .section-head p {
+      margin: 0.45rem 0 0;
+      color: var(--muted);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      padding: 1.15rem;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: var(--surface-strong);
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 {
+      margin: 0;
+      font-size: 1.08rem;
+      letter-spacing: -0.01em;
+    }
+
+    .card ul {
+      margin: 0.7rem 0 0;
+      padding-left: 1rem;
+      color: var(--muted);
+    }
+
+    .card li + li { margin-top: 0.45rem; }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity 0.45s ease, transform 0.45s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .accordion {
+      display: grid;
+      gap: 0.65rem;
+    }
+
+    .acc-item {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      overflow: hidden;
+      background: rgba(11, 18, 43, 0.66);
+    }
+
+    .acc-btn {
+      width: 100%;
+      background: transparent;
+      border: 0;
+      color: var(--text);
+      font: inherit;
+      padding: 0.9rem 0.95rem;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .acc-panel {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      padding: 0 0.95rem;
+      color: var(--muted);
+    }
+
+    .acc-item.open .acc-panel {
+      max-height: 180px;
+      padding-bottom: 0.9rem;
+    }
+
+    .acc-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      display: grid;
+      place-items: center;
+      color: var(--primary);
+      flex-shrink: 0;
+    }
+
+    .cta {
+      padding: 2.2rem 0 3.4rem;
+    }
+
+    .cta-wrap {
+      padding: 1.45rem;
+      text-align: center;
+    }
+
+    .cta-wrap h2 {
+      margin: 0;
+      font-size: clamp(1.4rem, 3vw, 2rem);
+    }
+
+    .cta-wrap p {
+      margin: 0.55rem auto 0;
+      color: var(--muted);
+      max-width: 62ch;
+    }
+
+    .foot-note {
+      margin-top: 1.05rem;
+      display: inline-flex;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 0.38rem 0.78rem;
+      background: rgba(148, 163, 184, 0.1);
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    @media (max-width: 940px) {
+      .hero-grid,
+      .grid-2 { grid-template-columns: 1fr; }
+
+      .hero { padding-top: 4rem; }
+    }
+
+    @media (max-width: 620px) {
+      .container { width: min(var(--max), calc(100% - 1.2rem)); }
+      .hero-main,
+      .hero-side,
+      .card,
+      .cta-wrap { padding: 1.05rem; }
+      .metric-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="#home">Best <span>Web Developer</span></a>
+      <div class="contact-list">
+        <a class="chip" href="tel:+966510451995">📞 +966510451995</a>
+        <a class="chip" href="https://bestwebdeveloper.org" target="_blank" rel="noopener">🌐 bestwebdeveloper.org</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-grid">
+        <article class="glass hero-main reveal">
+          <span class="eyebrow">Illustration Services</span>
+          <h1>
+            Innovative Product Design &
+            <span class="gradient">3D Modelling Services</span>
+          </h1>
+          <p class="lead">
+            At Best Web Developer, we transform your ideas from concept to final prototype with high-quality product design,
+            practical prototyping, precise 3D modelling, and engaging animation videos that elevate your market presence.
+          </p>
+          <div class="actions">
+            <a class="btn btn-primary" href="tel:+966510451995">Start Your Project</a>
+            <a class="btn btn-secondary" href="https://bestwebdeveloper.org" target="_blank" rel="noopener">Visit Website</a>
+          </div>
+          <div class="metric-grid">
+            <div class="metric">
+              <div class="num" data-count="3">0</div>
+              <small>Core service pillars</small>
+            </div>
+            <div class="metric">
+              <div class="num" data-count="2">0</div>
+              <small>Development stages: concept to prototype</small>
+            </div>
+            <div class="metric">
+              <div class="num" data-count="360">0</div>
+              <small>Full-view product visualization approach</small>
+            </div>
+            <div class="metric">
+              <div class="num" data-count="1">0</div>
+              <small>End-to-end partner for design and modelling</small>
+            </div>
+          </div>
+        </article>
+
+        <aside class="glass hero-side reveal">
+          <div class="side-box">
+            <h3>Comprehensive Product Development</h3>
+            <p>
+              A collaborative process that refines your concept with clarity, creativity, and production-focused thinking.
+            </p>
+          </div>
+          <div class="side-box">
+            <h3>Advanced 3D Modelling & Animation</h3>
+            <p>
+              Realistic 3D models, dynamic animation videos, and high-quality renders for presentations and marketing.
+            </p>
+          </div>
+          <div class="side-box">
+            <h3>Corporate-Ready Delivery</h3>
+            <p>
+              Detailed visuals and polished communication assets to support stakeholder buy-in, investor pitches, and launches.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>Comprehensive Product Development & Concept Design</h2>
+          <p>
+            Our product development workflow is structured and detail-oriented to ensure your idea is optimized before production.
+          </p>
+        </div>
+        <div class="grid-2">
+          <article class="card reveal">
+            <h3>What We Deliver</h3>
+            <ul>
+              <li>Concept design that captures your vision with creativity and clarity.</li>
+              <li>Detailed design prototypes to evaluate functionality and aesthetics.</li>
+              <li>Product design and prototyping support for launch-ready refinement.</li>
+              <li>Use of modern tools for precision, consistency, and scalability.</li>
+            </ul>
+          </article>
+          <article class="card reveal">
+            <h3>Business Impact</h3>
+            <ul>
+              <li>Clearer product direction for new launches and redesign initiatives.</li>
+              <li>Faster stakeholder alignment through visual and functional validation.</li>
+              <li>More confident production decisions based on tested concepts.</li>
+              <li>Sharper differentiation in competitive markets.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>Advanced 3D Modelling and Animation Videos</h2>
+          <p>
+            Visualize every important detail through realistic 3D assets and motion-driven communication.
+          </p>
+        </div>
+        <div class="grid-2">
+          <article class="card reveal">
+            <h3>3D Capability Highlights</h3>
+            <ul>
+              <li>Realistic 3D models that highlight product features and design quality.</li>
+              <li>Engaging animation videos that bring concepts to life with movement.</li>
+              <li>High-quality rendering outputs for marketing, presentation, and investor use.</li>
+            </ul>
+          </article>
+          <article class="card reveal">
+            <h3>How It Supports Growth</h3>
+            <ul>
+              <li>Improves communication clarity across teams, clients, and stakeholders.</li>
+              <li>Strengthens product storytelling for sales and promotional campaigns.</li>
+              <li>Builds confidence in buyers and partners through professional visualization.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>Why Choose Best Web Developer for Product Design?</h2>
+        </div>
+        <div class="accordion reveal" id="why-us">
+          <div class="acc-item open">
+            <button class="acc-btn" type="button">
+              Expert designers and animators with years of experience
+              <span class="acc-icon">+</span>
+            </button>
+            <div class="acc-panel">
+              Skilled professionals guide each phase from idea shaping to refined visual execution.
+            </div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-btn" type="button">
+              End-to-end product design and prototyping solutions
+              <span class="acc-icon">+</span>
+            </button>
+            <div class="acc-panel">
+              A single team manages concept strategy, prototype detailing, 3D visualization, and presentation-ready assets.
+            </div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-btn" type="button">
+              Customized services tailored to your goals
+              <span class="acc-icon">+</span>
+            </button>
+            <div class="acc-panel">
+              Every design and modelling deliverable is aligned with your industry context, audience expectations, and business outcomes.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <div class="glass cta-wrap reveal">
+          <h2>Bring Your Product Ideas to Life</h2>
+          <p>
+            Partner with Best Web Developer for professional product design, 3D modelling, and animation videos that help you innovate and inspire.
+            Connect today to begin your Illustration & Modelling Services project.
+          </p>
+          <div class="actions" style="justify-content:center;">
+            <a class="btn btn-primary" href="tel:+966510451995">Call: +966510451995</a>
+            <a class="btn btn-secondary" href="https://bestwebdeveloper.org" target="_blank" rel="noopener">bestwebdeveloper.org</a>
+          </div>
+          <div class="foot-note">Corporate visual design • Product storytelling • Prototype-focused execution</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const revealItems = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealItems.forEach((item) => io.observe(item));
+
+    const counters = document.querySelectorAll('[data-count]');
+    const animateCounter = (el) => {
+      const target = Number(el.getAttribute('data-count'));
+      const duration = 1100;
+      const start = performance.now();
+
+      const step = (now) => {
+        const progress = Math.min((now - start) / duration, 1);
+        const value = Math.floor(progress * target);
+        el.textContent = value;
+        if (progress < 1) requestAnimationFrame(step);
+      };
+
+      requestAnimationFrame(step);
+    };
+
+    counters.forEach((counter) => animateCounter(counter));
+
+    const accItems = document.querySelectorAll('.acc-item');
+    accItems.forEach((item) => {
+      const button = item.querySelector('.acc-btn');
+      button.addEventListener('click', () => {
+        accItems.forEach((other) => {
+          if (other !== item) other.classList.remove('open');
+        });
+        item.classList.toggle('open');
+      });
+    });
+  </script>
+</body>
+</html>
