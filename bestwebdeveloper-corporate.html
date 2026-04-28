@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Best Web Developer | Digital Growth Partner</title>
+  <meta name="description" content="Best Web Developer is a full-service digital agency in the USA and UK, delivering SEO, development, branding, UI/UX, and marketing solutions." />
+  <style>
+    :root {
+      --bg: #070b1a;
+      --card: #101a35;
+      --card-2: #0d1530;
+      --text: #ecf1ff;
+      --muted: #a3b2d9;
+      --primary: #4f8cff;
+      --secondary: #8f5bff;
+      --accent: #2ee6bf;
+      --line: rgba(255, 255, 255, 0.12);
+      --gradient: linear-gradient(135deg, #4f8cff, #8f5bff 55%, #2ee6bf);
+      --radius: 18px;
+      --shadow: 0 16px 45px rgba(6, 12, 35, 0.45);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 15% 10%, rgba(79, 140, 255, 0.25), transparent 35%),
+        radial-gradient(circle at 85% 20%, rgba(143, 91, 255, 0.24), transparent 33%),
+        radial-gradient(circle at 50% 85%, rgba(46, 230, 191, 0.16), transparent 35%),
+        var(--bg);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    .container {
+      width: min(1180px, 92%);
+      margin: auto;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.05);
+      padding: 9px 15px;
+      border-radius: 999px;
+      color: #c8d5fb;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      backdrop-filter: blur(8px);
+    }
+
+    .badge::before {
+      content: "";
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 16px var(--accent);
+      animation: pulse 1.8s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.4); opacity: 0.45; }
+    }
+
+    header {
+      padding: 76px 0 58px;
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 28px;
+      align-items: stretch;
+      margin-top: 22px;
+    }
+
+    .hero-content h1 {
+      font-size: clamp(2rem, 3.8vw, 3.6rem);
+      line-height: 1.12;
+      margin: 16px 0;
+      letter-spacing: -0.8px;
+    }
+
+    .hero-content h1 span {
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-content p {
+      color: var(--muted);
+      max-width: 60ch;
+      font-size: 1.06rem;
+      margin-bottom: 24px;
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      border-radius: 12px;
+      padding: 13px 20px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: transform .2s ease, box-shadow .2s ease, opacity .2s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .btn-primary {
+      background: var(--gradient);
+      color: #fff;
+      box-shadow: 0 10px 28px rgba(79, 140, 255, 0.35);
+    }
+
+    .btn-secondary {
+      color: #dbe5ff;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      opacity: .95;
+    }
+
+    .hero-card,
+    .about,
+    .services,
+    .contact-card,
+    footer {
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, var(--card), var(--card-2));
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card {
+      padding: 25px;
+      display: grid;
+      gap: 15px;
+      align-content: center;
+    }
+
+    .hero-stat {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.025);
+    }
+
+    .hero-stat strong {
+      font-size: 1.25rem;
+      letter-spacing: 0.2px;
+    }
+
+    .hero-stat span {
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    section {
+      margin-top: 34px;
+    }
+
+    .about {
+      padding: 26px;
+    }
+
+    .section-title {
+      font-size: clamp(1.45rem, 2.4vw, 2rem);
+      margin-bottom: 12px;
+      letter-spacing: -0.3px;
+    }
+
+    .section-text {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .services {
+      padding: 26px;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .service-card {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 16px;
+      background: rgba(255, 255, 255, 0.03);
+      transition: transform .2s ease, border-color .2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: "";
+      position: absolute;
+      inset: auto -20px -26px auto;
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(79,140,255,0.24), transparent 70%);
+      pointer-events: none;
+    }
+
+    .service-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(79, 140, 255, 0.45);
+    }
+
+    .service-card h3 {
+      font-size: 1rem;
+      margin-bottom: 6px;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    .contact-card {
+      margin: 34px 0 32px;
+      padding: 26px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 10px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .contact-item {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 13px;
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .contact-item small {
+      display: block;
+      color: var(--muted);
+      margin-bottom: 2px;
+      font-size: 0.82rem;
+      letter-spacing: .2px;
+    }
+
+    .contact-item a,
+    .contact-item span {
+      color: #f4f7ff;
+      text-decoration: none;
+      font-weight: 600;
+      word-break: break-word;
+    }
+
+    footer {
+      padding: 18px;
+      margin-bottom: 34px;
+      text-align: center;
+      color: #bfd0fb;
+      font-size: 0.9rem;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity .55s ease, transform .55s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      header {
+        padding-top: 58px;
+      }
+
+      .service-grid,
+      .contact-list {
+        grid-template-columns: 1fr;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .hero-content p {
+        font-size: 0.98rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="badge">Founded in 2023 • USA & UK Presence</div>
+      <div class="hero-grid">
+        <div class="hero-content reveal">
+          <h1>Welcome to <span>Best Web Developer</span> — Your Digital Growth Partner</h1>
+          <p>
+            We are a full-service digital powerhouse helping startups and established businesses build a stronger,
+            faster, and more profitable online presence through strategy, creativity, and technology.
+          </p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="tel:+966510451995">Call Now</a>
+            <a class="btn btn-secondary" href="https://bestwebdeveloper.org" target="_blank" rel="noopener">Visit Website</a>
+          </div>
+          <p class="section-text">Your brand is unique. Your digital presence should be too — that is why we deliver agile, customer-focused, and results-driven execution in every project.</p>
+        </div>
+
+        <aside class="hero-card reveal">
+          <div class="hero-stat"><strong id="counter-services">0</strong><span>Specialized Services</span></div>
+          <div class="hero-stat"><strong id="counter-regions">0</strong><span>Primary Regions (USA + UK)</span></div>
+          <div class="hero-stat"><strong id="counter-focus">0</strong><span>Mission: Brand Growth</span></div>
+        </aside>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="about reveal">
+      <h2 class="section-title">Corporate Overview</h2>
+      <p class="section-text">
+        Best Web Developer combines data-backed digital marketing with high-performance development and design. Our team works as a strategic extension of your business to increase visibility, build trust, and convert attention into revenue.
+      </p>
+    </section>
+
+    <section class="services reveal">
+      <h2 class="section-title">Our Core Services</h2>
+      <p class="section-text">A complete ecosystem of digital solutions built to help your business scale locally and globally:</p>
+
+      <div class="service-grid">
+        <article class="service-card"><h3>Search Engine Optimization (SEO)</h3><p>Improve rankings, organic traffic, and long-term visibility on search engines.</p></article>
+        <article class="service-card"><h3>Email Marketing Near Me</h3><p>Localized and global campaigns to engage audiences with precision messaging.</p></article>
+        <article class="service-card"><h3>Content Marketing Services</h3><p>Create high-converting content that educates, inspires, and drives action.</p></article>
+        <article class="service-card"><h3>Social Media Agency Campaigns</h3><p>Strategic social storytelling and growth plans tailored to your target market.</p></article>
+        <article class="service-card"><h3>Web Development & Design</h3><p>Modern, responsive, and conversion-oriented websites engineered for performance.</p></article>
+        <article class="service-card"><h3>Android App Development</h3><p>Scalable mobile experiences built for speed, reliability, and user retention.</p></article>
+        <article class="service-card"><h3>Brand Design Services</h3><p>Identity systems and visual branding that communicate your core value clearly.</p></article>
+        <article class="service-card"><h3>UI/UX Design</h3><p>Intuitive digital experiences focused on usability, accessibility, and delight.</p></article>
+        <article class="service-card"><h3>Digital Marketing Services</h3><p>End-to-end strategy blending paid, organic, social, and lifecycle channels.</p></article>
+        <article class="service-card"><h3>Custom Illustration Services</h3><p>Unique visuals that strengthen campaigns, communication, and brand recall.</p></article>
+      </div>
+    </section>
+
+    <section class="contact-card reveal">
+      <h2 class="section-title">Connect With Best Web Developer</h2>
+      <div class="contact-list">
+        <div class="contact-item">
+          <small>Mobile Number</small>
+          <a href="tel:+966510451995">+966510451995</a>
+        </div>
+        <div class="contact-item">
+          <small>Business Website</small>
+          <a href="https://bestwebdeveloper.org" target="_blank" rel="noopener">bestwebdeveloper.org</a>
+        </div>
+      </div>
+      <p class="section-text">Let’s build a digital identity that reflects the true strength of your brand and drives measurable business growth.</p>
+    </section>
+  </main>
+
+  <footer class="container">
+    © <span id="year"></span> Best Web Developer — Innovative, Agile, Results-Driven.
+  </footer>
+
+  <script>
+    const revealItems = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealItems.forEach((item) => observer.observe(item));
+
+    const animateCounter = (id, target, suffix = '+') => {
+      const el = document.getElementById(id);
+      let current = 0;
+      const step = Math.max(1, Math.ceil(target / 60));
+
+      const timer = setInterval(() => {
+        current += step;
+        if (current >= target) {
+          current = target;
+          clearInterval(timer);
+        }
+        el.textContent = `${current}${suffix}`;
+      }, 24);
+    };
+
+    animateCounter('counter-services', 10, '+');
+    animateCounter('counter-regions', 2, '');
+    animateCounter('counter-focus', 100, '%');
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
