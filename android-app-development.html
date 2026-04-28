@@ -1,0 +1,818 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Professional Android app development services by Best Web Developer. Corporate-grade design, development, testing, deployment, and support for scalable Android applications."
+    />
+    <title>Android App Development | Best Web Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #050816;
+        --surface: rgba(13, 20, 46, 0.78);
+        --surface-strong: rgba(11, 18, 40, 0.95);
+        --line: rgba(148, 163, 184, 0.22);
+        --text: #e2e8f0;
+        --muted: #9aa8c2;
+        --primary: #38bdf8;
+        --secondary: #22d3ee;
+        --accent: #34d399;
+        --warn: #f59e0b;
+        --radius: 18px;
+        --max: 1200px;
+        --shadow: 0 25px 45px rgba(2, 6, 23, 0.35);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Inter", sans-serif;
+        color: var(--text);
+        line-height: 1.6;
+        background:
+          radial-gradient(
+            circle at 10% 8%,
+            rgba(56, 189, 248, 0.22),
+            transparent 28%
+          ),
+          radial-gradient(
+            circle at 88% 14%,
+            rgba(34, 211, 238, 0.2),
+            transparent 30%
+          ),
+          radial-gradient(
+            circle at 68% 84%,
+            rgba(52, 211, 153, 0.16),
+            transparent 30%
+          ),
+          var(--bg);
+        min-height: 100vh;
+      }
+
+      .container {
+        width: min(var(--max), calc(100% - 2.2rem));
+        margin: 0 auto;
+      }
+
+      .glass {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(12px);
+      }
+
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 40;
+        background: rgba(5, 8, 22, 0.82);
+        border-bottom: 1px solid var(--line);
+        backdrop-filter: blur(10px);
+      }
+
+      .topbar-wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.9rem;
+        flex-wrap: wrap;
+        min-height: 68px;
+        padding: 0.5rem 0;
+      }
+
+      .brand {
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        font-size: 1rem;
+      }
+
+      .brand strong {
+        color: var(--secondary);
+        font-weight: 900;
+      }
+
+      .top-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.55rem;
+      }
+
+      .chip {
+        text-decoration: none;
+        color: var(--text);
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 0.42rem 0.85rem;
+        font-size: 0.82rem;
+        background: rgba(148, 163, 184, 0.1);
+        transition:
+          border-color 0.2s ease,
+          transform 0.2s ease;
+      }
+
+      .chip:hover {
+        border-color: rgba(56, 189, 248, 0.6);
+        transform: translateY(-1px);
+      }
+
+      .hero {
+        padding: 4.6rem 0 2.2rem;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 1.05rem;
+        align-items: stretch;
+      }
+
+      .panel {
+        padding: 1.5rem;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        padding: 0.4rem 0.8rem;
+        border-radius: 999px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-size: 0.72rem;
+        font-weight: 700;
+        color: var(--accent);
+        border: 1px solid var(--line);
+        background: rgba(52, 211, 153, 0.12);
+      }
+
+      h1 {
+        margin: 0.95rem 0 0.8rem;
+        line-height: 1.1;
+        letter-spacing: -0.03em;
+        font-size: clamp(2rem, 5vw, 3.35rem);
+      }
+
+      .gradient {
+        background: linear-gradient(120deg, #67e8f9, #7dd3fc 45%, #6ee7b7);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .lead {
+        margin: 0;
+        color: var(--muted);
+        max-width: 65ch;
+      }
+
+      .actions {
+        margin-top: 1.2rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.7rem;
+      }
+
+      .btn {
+        border-radius: 12px;
+        text-decoration: none;
+        font-weight: 700;
+        padding: 0.74rem 1.08rem;
+        border: 1px solid transparent;
+        transition: transform 0.2s ease;
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+
+      .btn-primary {
+        color: #072433;
+        background: linear-gradient(
+          120deg,
+          var(--secondary),
+          var(--primary),
+          var(--accent)
+        );
+      }
+
+      .btn-secondary {
+        color: var(--text);
+        border-color: var(--line);
+        background: rgba(148, 163, 184, 0.12);
+      }
+
+      .metrics {
+        margin-top: 1.15rem;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.75rem;
+      }
+
+      .metric {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 0.85rem;
+        background: rgba(11, 18, 40, 0.72);
+      }
+
+      .metric-value {
+        font-size: 1.4rem;
+        font-weight: 800;
+        line-height: 1;
+        color: var(--secondary);
+      }
+
+      .metric small {
+        color: var(--muted);
+        display: block;
+        margin-top: 0.35rem;
+        font-weight: 500;
+      }
+
+      .hero-card ul {
+        margin: 1rem 0 0;
+        padding-left: 1.1rem;
+        color: var(--muted);
+      }
+
+      .hero-card li {
+        margin-bottom: 0.45rem;
+      }
+
+      .section {
+        padding: 1rem 0 2.8rem;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 1.2rem;
+      }
+
+      h2 {
+        margin: 0;
+        font-size: clamp(1.45rem, 3.3vw, 2.2rem);
+        letter-spacing: -0.02em;
+      }
+
+      .sub {
+        margin: 0.45rem auto 0;
+        color: var(--muted);
+        max-width: 78ch;
+      }
+
+      .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.95rem;
+      }
+
+      .card {
+        padding: 1.15rem;
+        border: 1px solid var(--line);
+        border-radius: 15px;
+        background: rgba(11, 18, 40, 0.78);
+      }
+
+      .icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 11px;
+        display: inline-grid;
+        place-items: center;
+        background: rgba(56, 189, 248, 0.16);
+        border: 1px solid rgba(56, 189, 248, 0.4);
+        color: var(--primary);
+        font-weight: 800;
+        margin-bottom: 0.7rem;
+      }
+
+      .card h3 {
+        margin: 0 0 0.45rem;
+        font-size: 1.03rem;
+      }
+
+      .card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .timeline {
+        display: grid;
+        gap: 0.8rem;
+        margin-top: 1.1rem;
+      }
+
+      .step {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 0.8rem;
+        align-items: flex-start;
+        padding: 0.9rem;
+        border-radius: 14px;
+        border: 1px solid var(--line);
+        background: rgba(11, 18, 40, 0.74);
+      }
+
+      .step-badge {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        background: rgba(34, 211, 238, 0.15);
+        border: 1px solid rgba(34, 211, 238, 0.45);
+        color: var(--secondary);
+        font-weight: 800;
+        flex-shrink: 0;
+      }
+
+      .step h4 {
+        margin: 0 0 0.2rem;
+        font-size: 1rem;
+      }
+
+      .step p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.94rem;
+      }
+
+      .contact {
+        padding: 1.3rem;
+        border-radius: 16px;
+        border: 1px solid var(--line);
+        background: linear-gradient(
+          130deg,
+          rgba(56, 189, 248, 0.15),
+          rgba(52, 211, 153, 0.12)
+        );
+        display: grid;
+        gap: 0.6rem;
+      }
+
+      .contact a {
+        color: #9be8ff;
+        text-decoration: none;
+        font-weight: 700;
+      }
+
+      .faq {
+        display: grid;
+        gap: 0.6rem;
+        margin-top: 0.9rem;
+      }
+
+      .faq-item {
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        overflow: hidden;
+        background: rgba(11, 18, 40, 0.75);
+      }
+
+      .faq-btn {
+        width: 100%;
+        text-align: left;
+        border: 0;
+        background: transparent;
+        color: var(--text);
+        font-size: 0.95rem;
+        font-weight: 700;
+        padding: 0.82rem 0.9rem;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.6rem;
+      }
+
+      .faq-btn span:last-child {
+        color: var(--warn);
+        transition: transform 0.2s ease;
+      }
+
+      .faq-body {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.25s ease;
+      }
+
+      .faq-body p {
+        margin: 0;
+        padding: 0 0.9rem 0.85rem;
+        color: var(--muted);
+        font-size: 0.93rem;
+      }
+
+      .faq-item.open .faq-btn span:last-child {
+        transform: rotate(45deg);
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(18px);
+        transition:
+          opacity 0.45s ease,
+          transform 0.45s ease;
+      }
+
+      .reveal.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      footer {
+        padding: 0.9rem 0 2rem;
+        text-align: center;
+        color: var(--muted);
+        font-size: 0.84rem;
+      }
+
+      @media (max-width: 980px) {
+        .hero-grid,
+        .grid-3 {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .container {
+          width: min(var(--max), calc(100% - 1.3rem));
+        }
+        .panel {
+          padding: 1.1rem;
+        }
+        .metrics {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar-wrap">
+        <div class="brand">Best <strong>Web Developer</strong></div>
+        <div class="top-links">
+          <a class="chip" href="tel:+966510451995">Call: +966510451995</a>
+          <a
+            class="chip"
+            href="https://bestwebdeveloper.org"
+            target="_blank"
+            rel="noopener"
+            >bestwebdeveloper.org</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <article class="glass panel reveal">
+            <span class="eyebrow">Android App Development</span>
+            <h1>
+              Professional
+              <span class="gradient">Android Development Services</span> for
+              Growth-Driven Businesses
+            </h1>
+            <p class="lead">
+              Looking for expert Android development and reliable app
+              development services? Best Web Developer is your go-to Android app
+              development company, offering end-to-end solutions to bring mobile
+              app ideas to life with a polished corporate approach.
+            </p>
+            <div class="actions">
+              <a class="btn btn-primary" href="tel:+966510451995"
+                >Start Your Project</a
+              >
+              <a
+                class="btn btn-secondary"
+                href="https://bestwebdeveloper.org"
+                target="_blank"
+                rel="noopener"
+                >Visit Website</a
+              >
+            </div>
+            <div class="metrics">
+              <div class="metric">
+                <div class="metric-value" data-counter="100">0</div>
+                <small>Custom and scalable solution focus</small>
+              </div>
+              <div class="metric">
+                <div class="metric-value" data-counter="360">0</div>
+                <small>Lifecycle support from concept to launch</small>
+              </div>
+              <div class="metric">
+                <div class="metric-value" data-counter="24">0</div>
+                <small>Ongoing maintenance & update readiness</small>
+              </div>
+              <div class="metric">
+                <div class="metric-value" data-counter="99">0</div>
+                <small>Performance + quality-driven delivery</small>
+              </div>
+            </div>
+          </article>
+
+          <aside class="glass panel hero-card reveal">
+            <h2 style="font-size: 1.45rem">Why Choose Best Web Developer?</h2>
+            <p class="lead" style="margin-top: 0.45rem">
+              As a trusted Android application development partner, we combine
+              creativity, technology, and user-centric design to build apps that
+              stand out in competitive marketplaces.
+            </p>
+            <ul>
+              <li>Corporate-ready planning aligned with business goals.</li>
+              <li>High-performance app architecture for better reliability.</li>
+              <li>Transparent project communication and on-time delivery.</li>
+              <li>
+                Structured launch support for app store Android publishing.
+              </li>
+            </ul>
+            <div class="contact">
+              <strong>Direct Contact</strong>
+              <span>Phone: <a href="tel:+966510451995">+966510451995</a></span>
+              <span
+                >Business:
+                <a
+                  href="https://bestwebdeveloper.org"
+                  target="_blank"
+                  rel="noopener"
+                  >bestwebdeveloper.org</a
+                ></span
+              >
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-title reveal">
+            <h2>Our Android App Development Services</h2>
+            <p class="sub">
+              Whether you need a new app launched or an existing product
+              enhanced, we provide complete Android application development
+              services with a detailed, business-first execution model.
+            </p>
+          </div>
+          <div class="grid-3">
+            <article class="card reveal">
+              <div class="icon">01</div>
+              <h3>Custom Android App Development</h3>
+              <p>
+                Native Android app development using Java and Kotlin, designed
+                for speed, usability, and long-term scalability.
+              </p>
+            </article>
+            <article class="card reveal">
+              <div class="icon">02</div>
+              <h3>UI/UX Design for Mobile</h3>
+              <p>
+                Visually attractive and intuitive interfaces optimized for
+                engagement, conversion, and seamless interaction.
+              </p>
+            </article>
+            <article class="card reveal">
+              <div class="icon">03</div>
+              <h3>Testing & Quality Assurance</h3>
+              <p>
+                Comprehensive test coverage to ensure reliability, security, and
+                smooth performance across Android devices.
+              </p>
+            </article>
+            <article class="card reveal">
+              <div class="icon">04</div>
+              <h3>App Store Submission</h3>
+              <p>
+                Professional support for app store Android submission,
+                optimization, and launch-readiness best practices.
+              </p>
+            </article>
+            <article class="card reveal">
+              <div class="icon">05</div>
+              <h3>Backend & API Integration</h3>
+              <p>
+                Secure integration with backend systems, third-party APIs, and
+                cloud services for robust business workflows.
+              </p>
+            </article>
+            <article class="card reveal">
+              <div class="icon">06</div>
+              <h3>Monitoring & Maintenance</h3>
+              <p>
+                Ongoing support, updates, and performance monitoring to keep
+                applications current and dependable over time.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-title reveal">
+            <h2>Our Delivery Process (Corporate View)</h2>
+            <p class="sub">
+              A structured roadmap helps stakeholders track progress, timelines,
+              and quality outcomes at every stage.
+            </p>
+          </div>
+          <div class="timeline">
+            <article class="step reveal">
+              <div class="step-badge">1</div>
+              <div>
+                <h4>Discovery & Strategy</h4>
+                <p>
+                  We gather requirements, define user flows, and align technical
+                  planning with your commercial objectives.
+                </p>
+              </div>
+            </article>
+            <article class="step reveal">
+              <div class="step-badge">2</div>
+              <div>
+                <h4>Design & Prototyping</h4>
+                <p>
+                  Our team creates branded UI/UX concepts and interactive
+                  screens to validate app direction quickly.
+                </p>
+              </div>
+            </article>
+            <article class="step reveal">
+              <div class="step-badge">3</div>
+              <div>
+                <h4>Development & Integration</h4>
+                <p>
+                  We build core Android features, integrate APIs, and apply
+                  secure coding standards for maintainability.
+                </p>
+              </div>
+            </article>
+            <article class="step reveal">
+              <div class="step-badge">4</div>
+              <div>
+                <h4>QA, Launch & Support</h4>
+                <p>
+                  We perform detailed quality testing, publish the app, and
+                  continue optimization with proactive support.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-title reveal">
+            <h2>Frequently Asked Questions</h2>
+            <p class="sub">
+              Quick answers for businesses evaluating Android app development
+              partnerships.
+            </p>
+          </div>
+          <div class="faq">
+            <div class="faq-item reveal">
+              <button class="faq-btn" type="button">
+                <span
+                  >Can you build a completely custom Android application?</span
+                ><span>+</span>
+              </button>
+              <div class="faq-body">
+                <p>
+                  Yes. We develop custom Android applications tailored to your
+                  business model, performance requirements, and user
+                  expectations.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item reveal">
+              <button class="faq-btn" type="button">
+                <span>Do you support app store Android publishing?</span
+                ><span>+</span>
+              </button>
+              <div class="faq-body">
+                <p>
+                  Absolutely. We assist with submission workflows, listing
+                  quality, and launch optimization for better visibility.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item reveal">
+              <button class="faq-btn" type="button">
+                <span>Do you provide maintenance after launch?</span
+                ><span>+</span>
+              </button>
+              <div class="faq-body">
+                <p>
+                  Yes, we provide ongoing support, security updates, performance
+                  monitoring, and feature enhancement as needed.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" style="padding-top: 0">
+        <div class="container reveal">
+          <div class="glass panel" style="text-align: center">
+            <h2>Ready to Develop Your Android Application?</h2>
+            <p class="sub" style="max-width: 64ch; margin: 0.55rem auto 0">
+              Partner with Best Web Developer for professional Android app
+              development and mobile app solutions that drive measurable
+              business results.
+            </p>
+            <div
+              class="actions"
+              style="justify-content: center; margin-top: 1rem"
+            >
+              <a class="btn btn-primary" href="tel:+966510451995"
+                >Call +966510451995</a
+              >
+              <a
+                class="btn btn-secondary"
+                href="https://bestwebdeveloper.org"
+                target="_blank"
+                rel="noopener"
+                >bestwebdeveloper.org</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      © <span id="year"></span> Best Web Developer — Android App Development
+      Services.
+    </footer>
+
+    <script>
+      const revealEls = document.querySelectorAll(".reveal");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("show");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12 },
+      );
+
+      revealEls.forEach((el) => observer.observe(el));
+
+      const counters = document.querySelectorAll("[data-counter]");
+      counters.forEach((counter) => {
+        const target = Number(counter.dataset.counter || 0);
+        let value = 0;
+        const duration = 1200;
+        const start = performance.now();
+
+        function animate(now) {
+          const progress = Math.min((now - start) / duration, 1);
+          value = Math.floor(progress * target);
+          counter.textContent = `${value}${target >= 100 ? "+" : ""}`;
+          if (progress < 1) requestAnimationFrame(animate);
+        }
+
+        requestAnimationFrame(animate);
+      });
+
+      document.querySelectorAll(".faq-item").forEach((item) => {
+        const btn = item.querySelector(".faq-btn");
+        const body = item.querySelector(".faq-body");
+        btn.addEventListener("click", () => {
+          const open = item.classList.contains("open");
+          document.querySelectorAll(".faq-item").forEach((it) => {
+            it.classList.remove("open");
+            it.querySelector(".faq-body").style.maxHeight = null;
+          });
+
+          if (!open) {
+            item.classList.add("open");
+            body.style.maxHeight = `${body.scrollHeight}px`;
+          }
+        });
+      });
+
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
