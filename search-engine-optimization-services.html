@@ -3,20 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Search Engine Optimization Services | Best Web Developer</title>
-  <meta name="description" content="Professional search engine optimization services by Best Web Developer. Improve rankings, traffic, and leads with proven SEO strategies." />
+  <title>Best Web Developer | Web Design, Development & Digital Marketing</title>
+  <meta
+    name="description"
+    content="Best Web Developer offers web design, web development, ecommerce, WordPress, Shopify, branding, SEO, email marketing, content marketing, social media, and mobile app development."
+  />
   <style>
     :root {
-      --primary: #0d47a1;
-      --primary-dark: #072f6b;
-      --accent: #00c2ff;
-      --accent-2: #5cf27b;
-      --text: #1f2937;
-      --muted: #6b7280;
-      --bg: #f7fbff;
-      --card: #ffffff;
-      --shadow: 0 12px 30px rgba(13, 71, 161, 0.12);
-      --radius: 18px;
+      --bg: #080d1f;
+      --bg-soft: #101735;
+      --panel: rgba(20, 31, 70, 0.72);
+      --text: #eaf1ff;
+      --muted: #b4c1e4;
+      --brand: #5aa5ff;
+      --brand-2: #7c67ff;
+      --accent: #28e0c9;
+      --danger: #ffd166;
+      --border: rgba(140, 165, 230, 0.25);
+      --shadow: 0 20px 50px rgba(2, 6, 23, 0.45);
+      --radius-lg: 22px;
+      --radius-md: 14px;
     }
 
     * {
@@ -25,69 +31,103 @@
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: "Segoe UI", Roboto, Arial, sans-serif;
+      font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
       color: var(--text);
-      background:
-        radial-gradient(circle at 10% -10%, rgba(0, 194, 255, 0.2), transparent 30%),
-        radial-gradient(circle at 90% 10%, rgba(92, 242, 123, 0.18), transparent 26%),
-        var(--bg);
       line-height: 1.6;
+      background:
+        radial-gradient(circle at 85% -15%, rgba(124, 103, 255, 0.35), transparent 35%),
+        radial-gradient(circle at 5% 8%, rgba(90, 165, 255, 0.28), transparent 32%),
+        linear-gradient(180deg, #070b1a, #0a1330 45%, #080d1f);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
     .container {
-      width: min(1140px, 92%);
+      width: min(1180px, 92%);
       margin-inline: auto;
     }
 
     .topbar {
-      background: linear-gradient(90deg, var(--primary-dark), var(--primary));
-      color: #fff;
-      padding: 10px 0;
-      font-size: 0.95rem;
+      background: linear-gradient(120deg, rgba(90, 165, 255, 0.2), rgba(40, 224, 201, 0.18));
+      border-bottom: 1px solid var(--border);
+      padding: 9px 0;
+      font-size: 0.92rem;
     }
 
     .topbar-inner {
       display: flex;
-      justify-content: space-between;
-      gap: 12px;
       flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 8px 18px;
     }
 
-    .topbar a {
+    .topbar strong {
       color: #fff;
-      text-decoration: none;
-      font-weight: 700;
     }
 
     header {
-      padding: 34px 0 24px;
       position: sticky;
       top: 0;
-      z-index: 20;
-      background: rgba(247, 251, 255, 0.92);
+      z-index: 40;
+      background: rgba(8, 13, 31, 0.86);
       backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(13, 71, 161, 0.08);
+      border-bottom: 1px solid var(--border);
     }
 
     .nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 14px;
+      min-height: 74px;
+      gap: 16px;
     }
 
     .brand {
-      font-size: 1.25rem;
+      font-size: 1.2rem;
       font-weight: 800;
-      color: var(--primary-dark);
-      letter-spacing: 0.3px;
+      letter-spacing: 0.2px;
+      display: flex;
+      align-items: center;
+      gap: 9px;
     }
 
-    .actions {
+    .brand-dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 999px;
+      background: linear-gradient(120deg, var(--accent), var(--brand));
+      box-shadow: 0 0 16px rgba(40, 224, 201, 0.8);
+    }
+
+    .menu {
       display: flex;
-      gap: 10px;
+      gap: 14px;
       flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .menu a {
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 0.92rem;
+      transition: 0.2s ease;
+      padding: 6px 8px;
+      border-radius: 8px;
+    }
+
+    .menu a:hover,
+    .menu a.active {
+      color: #fff;
+      background: rgba(90, 165, 255, 0.18);
     }
 
     .btn {
@@ -96,7 +136,9 @@
       padding: 11px 18px;
       font-weight: 700;
       cursor: pointer;
-      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
@@ -105,247 +147,232 @@
     }
 
     .btn-primary {
-      background: linear-gradient(90deg, var(--primary), #1a73e8);
       color: #fff;
-      box-shadow: 0 8px 22px rgba(26, 115, 232, 0.32);
+      background: linear-gradient(120deg, var(--brand), var(--brand-2));
+      box-shadow: 0 14px 30px rgba(90, 165, 255, 0.35);
     }
 
-    .btn-outline {
-      background: #fff;
-      color: var(--primary-dark);
-      border: 1px solid rgba(13, 71, 161, 0.2);
+    .btn-ghost {
+      color: #fff;
+      background: rgba(140, 165, 230, 0.16);
+      border: 1px solid rgba(140, 165, 230, 0.3);
+    }
+
+    main section {
+      padding: 70px 0;
     }
 
     .hero {
-      padding: 64px 0 34px;
+      padding-top: 80px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 30px;
-      align-items: center;
+      grid-template-columns: 1.12fr 0.88fr;
+      gap: 28px;
+      align-items: stretch;
     }
 
-    .eyebrow {
-      display: inline-block;
-      background: rgba(26, 115, 232, 0.12);
-      color: var(--primary-dark);
-      border: 1px solid rgba(13, 71, 161, 0.15);
-      padding: 8px 14px;
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #fff;
+      background: rgba(90, 165, 255, 0.18);
+      border: 1px solid var(--border);
       border-radius: 999px;
       font-size: 0.84rem;
-      font-weight: 700;
+      padding: 8px 13px;
       margin-bottom: 14px;
     }
 
     h1 {
-      font-size: clamp(1.8rem, 3.8vw, 3rem);
+      font-size: clamp(1.95rem, 4vw, 3.3rem);
       line-height: 1.2;
-      margin-bottom: 14px;
-      color: #0b2b63;
+      margin-bottom: 16px;
+      letter-spacing: 0.2px;
     }
 
     .hero p {
       color: var(--muted);
-      margin-bottom: 20px;
-      font-size: 1.02rem;
+      margin-bottom: 22px;
+      max-width: 64ch;
     }
 
-    .hero-stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
       gap: 12px;
-      margin-top: 12px;
+      margin-bottom: 24px;
+    }
+
+    .stats {
+      display: grid;
+      gap: 12px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
     .stat {
-      background: var(--card);
-      border-radius: 12px;
-      padding: 14px;
-      text-align: center;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 15px;
       box-shadow: var(--shadow);
-      border: 1px solid rgba(13, 71, 161, 0.08);
     }
 
     .stat strong {
       display: block;
-      font-size: 1.22rem;
-      color: var(--primary-dark);
+      font-size: 1.3rem;
+      color: #fff;
+      margin-bottom: 3px;
     }
 
     .hero-card {
-      background: linear-gradient(140deg, #0d47a1, #0f5ed7 55%, #14a2df);
-      color: #fff;
+      background: linear-gradient(155deg, rgba(90, 165, 255, 0.23), rgba(124, 103, 255, 0.15));
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
       padding: 24px;
-      border-radius: var(--radius);
       box-shadow: var(--shadow);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-card::after {
-      content: "";
-      position: absolute;
-      width: 200px;
-      height: 200px;
-      background: rgba(255, 255, 255, 0.14);
-      border-radius: 50%;
-      right: -70px;
-      bottom: -90px;
+      display: grid;
+      align-content: start;
+      gap: 14px;
     }
 
     .hero-card h3 {
-      margin-bottom: 10px;
+      font-size: 1.26rem;
     }
 
     .hero-card ul {
       list-style: none;
       display: grid;
-      gap: 9px;
-      margin-bottom: 18px;
+      gap: 10px;
     }
 
-    .hero-card li::before {
-      content: "✓";
-      margin-right: 9px;
-      color: var(--accent-2);
-      font-weight: 800;
-    }
-
-    section {
-      padding: 28px 0;
-    }
-
-    .section-title {
-      font-size: clamp(1.4rem, 3vw, 2.1rem);
-      margin-bottom: 10px;
-      color: #0b2b63;
-    }
-
-    .section-subtitle {
+    .hero-card li {
       color: var(--muted);
-      margin-bottom: 18px;
-      max-width: 800px;
+      border: 1px solid rgba(140, 165, 230, 0.2);
+      border-radius: 10px;
+      padding: 8px 10px;
+      background: rgba(11, 20, 49, 0.5);
     }
 
-    .cards {
+    .section-head {
+      margin-bottom: 24px;
+      max-width: 78ch;
+    }
+
+    .section-head h2 {
+      font-size: clamp(1.5rem, 2.8vw, 2.4rem);
+      margin-bottom: 10px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+    }
+
+    .grid-3,
+    .grid-2 {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
       gap: 16px;
     }
 
+    .grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
     .card {
-      background: #fff;
-      border-radius: var(--radius);
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 18px;
       box-shadow: var(--shadow);
-      padding: 20px;
-      border: 1px solid rgba(13, 71, 161, 0.08);
     }
 
     .card h3 {
-      color: var(--primary-dark);
       margin-bottom: 8px;
-      font-size: 1.1rem;
+      font-size: 1.08rem;
     }
 
-    .bullet-list {
+    .card p {
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .list {
       list-style: none;
       display: grid;
       gap: 9px;
-    }
-
-    .bullet-list li {
-      padding-left: 26px;
-      position: relative;
-      color: #344054;
-    }
-
-    .bullet-list li::before {
-      content: "";
-      width: 11px;
-      height: 11px;
-      border-radius: 50%;
-      background: linear-gradient(120deg, var(--primary), var(--accent));
-      position: absolute;
-      left: 0;
-      top: 8px;
-    }
-
-    .strip {
-      background: linear-gradient(90deg, #03265e, #1148a8, #0991c6);
-      color: #fff;
-      border-radius: var(--radius);
-      padding: 26px;
-      box-shadow: var(--shadow);
       margin-top: 8px;
     }
 
-    .strip p {
-      opacity: 0.95;
-      margin-top: 8px;
+    .list li::before {
+      content: "•";
+      color: var(--accent);
+      font-weight: 900;
+      margin-right: 8px;
+    }
+
+    .highlight {
+      border-left: 4px solid var(--accent);
+      padding-left: 12px;
+      color: #d8e6ff;
+      margin-top: 10px;
+      font-size: 0.95rem;
     }
 
     .cta {
-      margin-top: 14px;
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
+      text-align: center;
+      background: linear-gradient(145deg, rgba(90, 165, 255, 0.2), rgba(124, 103, 255, 0.2));
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      padding: 38px 20px;
+    }
+
+    .cta h2 {
+      margin-bottom: 10px;
+      font-size: clamp(1.6rem, 3vw, 2.3rem);
+    }
+
+    .cta p {
+      color: var(--muted);
+      max-width: 70ch;
+      margin: 0 auto 16px;
     }
 
     footer {
-      margin-top: 30px;
-      background: #061a44;
-      color: #dce6ff;
-      padding: 26px 0;
+      padding: 26px 0 40px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-align: center;
     }
 
-    .footer-grid {
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(18px);
-      transition: all 0.6s ease;
-    }
-
-    .reveal.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @media (max-width: 960px) {
+    @media (max-width: 990px) {
       .hero-grid,
-      .cards {
+      .grid-3,
+      .grid-2,
+      .stats {
         grid-template-columns: 1fr;
-      }
-
-      .hero {
-        padding-top: 30px;
-      }
-
-      .hero-stats {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    @media (max-width: 620px) {
-      .hero-stats {
-        grid-template-columns: 1fr;
-      }
-
-      .topbar-inner {
-        flex-direction: column;
-        align-items: flex-start;
       }
 
       header {
-        padding: 20px 0;
+        position: static;
+      }
+
+      .menu {
+        display: none;
+      }
+
+      .nav {
+        min-height: 64px;
+      }
+
+      main section {
+        padding: 54px 0;
       }
     }
   </style>
@@ -353,151 +380,274 @@
 <body>
   <div class="topbar">
     <div class="container topbar-inner">
-      <span>Best Web Developer • Search Engine Optimization Services</span>
-      <a href="tel:+966510451995">📞 +966510451995</a>
+      <p>Business Website: <strong>bestwebdeveloper.org</strong></p>
+      <p>Mobile Number: <strong>+966510451995</strong></p>
     </div>
   </div>
 
   <header>
     <div class="container nav">
-      <div class="brand">bestwebdeveloper.org</div>
-      <div class="actions">
-        <a class="btn btn-outline" href="https://bestwebdeveloper.org" target="_blank" rel="noopener">Visit Website</a>
-        <a class="btn btn-primary" href="tel:+966510451995">Free SEO Consultation</a>
-      </div>
+      <a href="#home" class="brand">
+        <span class="brand-dot" aria-hidden="true"></span>
+        Best Web Developer
+      </a>
+      <nav class="menu" aria-label="Primary navigation">
+        <a href="#services">Services</a>
+        <a href="#development">Development</a>
+        <a href="#marketing">Marketing</a>
+        <a href="#branding">Branding</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="btn btn-primary" href="tel:+966510451995">Call Now</a>
     </div>
   </header>
 
   <main>
-    <section class="hero">
+    <section class="hero" id="home">
       <div class="container hero-grid">
-        <div class="reveal">
-          <span class="eyebrow">Corporate SEO Growth Partner</span>
-          <h1>Search Engine Optimization Services by Best Web Developer</h1>
+        <div>
+          <span class="badge">Your Ultimate Partner for Web Design, Development & Digital Marketing</span>
+          <h1>Build a Powerful Corporate Digital Presence with Best Web Developer</h1>
           <p>
-            Welcome to Best Web Developer, your trusted partner for expert search engine optimization services designed to elevate your online visibility and drive sustainable business growth. We help brands appear on the first page of major search engines and turn search traffic into real business opportunities.
+            Best Web Developer is a premier web design agency committed to transforming your digital presence with tailored,
+            high-impact solutions. Whether you are a startup, a growing brand, or an established enterprise, we deliver
+            web design services, web development services, ecommerce expertise, and full-scale digital marketing.
           </p>
-          <div class="cta">
-            <a class="btn btn-primary" href="tel:+966510451995">Call Now: +966510451995</a>
-            <a class="btn btn-outline" href="#services">Explore Services</a>
+          <div class="actions">
+            <a href="#contact" class="btn btn-primary">Get Free Consultation</a>
+            <a href="#services" class="btn btn-ghost">Explore Services</a>
           </div>
-          <div class="hero-stats">
-            <div class="stat"><strong>360°</strong><span>SEO Strategy</span></div>
-            <div class="stat"><strong>White-Hat</strong><span>Long-Term Growth</span></div>
-            <div class="stat"><strong>Global + Local</strong><span>Ranking Focus</span></div>
+          <div class="stats">
+            <article class="stat">
+              <strong data-count="8">0</strong>
+              <span>Core Service Areas</span>
+            </article>
+            <article class="stat">
+              <strong data-count="3">0</strong>
+              <span>Business Types Served</span>
+            </article>
+            <article class="stat">
+              <strong data-count="24">0</strong>
+              <span>End-to-End Capabilities</span>
+            </article>
           </div>
         </div>
 
-        <aside class="hero-card reveal">
-          <h3>Why Businesses Choose Us</h3>
+        <aside class="hero-card" aria-label="Why choose us">
+          <h3>Why Choose Best Web Developer?</h3>
           <ul>
-            <li>Customized SEO plans based on your goals</li>
-            <li>Technical, on-page, and off-page optimization</li>
-            <li>Transparent progress reports and tracking</li>
-            <li>Algorithm-aware specialists for stable rankings</li>
+            <li>Impactful digital experiences with strategic execution.</li>
+            <li>Application developers, branding designers, and marketers under one roof.</li>
+            <li>Scalable, secure, and visually stunning digital products.</li>
+            <li>A true growth partner, not just another web design agency.</li>
           </ul>
-          <a class="btn btn-outline" style="background:#fff;color:#0b2b63;" href="https://bestwebdeveloper.org" target="_blank" rel="noopener">bestwebdeveloper.org</a>
+          <p class="highlight">From branding and logos to backend development, ecommerce, SEO, and social media advertising, every solution is aligned to measurable business growth.</p>
         </aside>
       </div>
     </section>
 
-    <section class="container reveal">
-      <h2 class="section-title">What is Search Engine Optimization?</h2>
-      <p class="section-subtitle">
-        Search engine optimization (SEO) is the process of improving your website’s structure, content, keywords, and authority to rank higher on Google, Bing, and Yahoo. Better rankings increase organic traffic, quality leads, and sales.
-      </p>
-      <div class="strip">
-        <h3>First-Page Visibility Is No Longer Optional</h3>
-        <p>
-          In today’s competitive market, ranking on page one is critical for building trust and winning customers before competitors do. Our team helps your business achieve that advantage with measurable, data-driven execution.
-        </p>
+    <section id="services">
+      <div class="container">
+        <div class="section-head">
+          <h2>Our Web Design Services</h2>
+          <p>Your website is your digital storefront. We combine creativity with usability to build visual experiences that convert visitors into customers.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card">
+            <h3>Responsive Design for All Devices</h3>
+            <p>Layouts that look polished and work smoothly across desktop, tablet, and mobile.</p>
+          </article>
+          <article class="card">
+            <h3>Intuitive Navigation & UX</h3>
+            <p>User journeys crafted to be clear, engaging, and conversion-friendly for every audience segment.</p>
+          </article>
+          <article class="card">
+            <h3>Corporate Conversion Focus</h3>
+            <p>Strategic structure and messaging to improve lead generation, trust, and business inquiries.</p>
+          </article>
+        </div>
+
+        <div class="section-head" style="margin-top: 30px;">
+          <h2>Specialized Ecommerce, WordPress & Shopify Solutions</h2>
+          <p>We deliver secure, fast, and sales-optimized online stores with custom development where needed.</p>
+        </div>
+        <div class="grid-2">
+          <article class="card">
+            <h3>Ecommerce Development</h3>
+            <ul class="list">
+              <li>Custom ecommerce platforms tailored to business goals.</li>
+              <li>Secure checkout, scalable architecture, and performance optimization.</li>
+              <li>Conversion-focused store pages designed to drive more sales.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>WordPress & Shopify Expertise</h3>
+            <ul class="list">
+              <li>Custom themes and plugin functionality aligned to your brand voice.</li>
+              <li>SEO-friendly structure with simple content management workflows.</li>
+              <li>Tailored Shopify implementations with polished storefront UX.</li>
+            </ul>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section id="services" class="container reveal">
-      <h2 class="section-title">Our Search Engine Services</h2>
-      <p class="section-subtitle">
-        We offer a complete suite of services that optimize your website for users and search engines while supporting both long-term organic growth and short-term lead generation.
-      </p>
-      <div class="cards">
-        <article class="card">
-          <h3>Search Engine Optimization Services</h3>
-          <ul class="bullet-list">
-            <li>Comprehensive SEO audits and competitor analysis</li>
-            <li>Keyword research and content optimization by niche</li>
-            <li>Technical SEO for speed, mobile usability, and crawlability</li>
-            <li>Link-building and off-page SEO to improve authority</li>
-            <li>Local SEO optimization for stronger regional visibility</li>
-            <li>Regular performance tracking and detailed reports</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>Search Engine Marketing & PPC</h3>
-          <ul class="bullet-list">
-            <li>Strategic search engine marketing for rapid visibility</li>
-            <li>Pay-per-click campaigns managed for maximum ROI</li>
-            <li>Keyword targeting aligned with SEO campaign data</li>
-            <li>Improved lead quality while organic SEO scales</li>
-            <li>Landing page suggestions for better conversion rates</li>
-          </ul>
-        </article>
+    <section id="development">
+      <div class="container">
+        <div class="section-head">
+          <h2>Web Development Services</h2>
+          <p>Beyond website creation, we engineer robust digital systems designed for scalability and long-term business growth.</p>
+        </div>
+        <div class="grid-2">
+          <article class="card">
+            <h3>Core Development Capabilities</h3>
+            <ul class="list">
+              <li>Frontend and backend development.</li>
+              <li>Custom web application development.</li>
+              <li>API integrations and third-party software support.</li>
+              <li>Database management and cloud-ready architecture.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Mobile & Application Development</h3>
+            <ul class="list">
+              <li>Android development and cross-platform mobile app solutions.</li>
+              <li>Application developers focused on reliability and performance.</li>
+              <li>Business-ready digital products built for real-world scale.</li>
+            </ul>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section class="container reveal">
-      <h2 class="section-title">What Sets Our SEO Apart?</h2>
-      <div class="cards">
-        <article class="card">
-          <h3>Trusted Expertise</h3>
-          <ul class="bullet-list">
-            <li>Recognized among the best SEO firms with proven outcomes</li>
-            <li>Consultants create personalized strategies for each business</li>
-            <li>Specialists stay updated with algorithm changes</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>Corporate-Level Process</h3>
-          <ul class="bullet-list">
-            <li>Transparent communication from audit to reporting</li>
-            <li>Sustainable white-hat techniques for long-term growth</li>
-            <li>Brand SEO messaging for stronger market authority</li>
-          </ul>
-        </article>
+    <section id="marketing">
+      <div class="container">
+        <div class="section-head">
+          <h2>Digital Marketing Services to Amplify Your Brand</h2>
+          <p>Our digital marketing team creates personalized strategies to maximize online reach and return on investment.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card">
+            <h3>SEO Search Optimization</h3>
+            <p>Keyword research, competitor analysis, and on-page/off-page SEO to increase rankings and organic traffic.</p>
+          </article>
+          <article class="card">
+            <h3>Email Marketing Agency Services</h3>
+            <p>Targeted campaigns and email marketing strategy plans that nurture leads, retain customers, and increase sales.</p>
+          </article>
+          <article class="card">
+            <h3>Content Marketing Agency</h3>
+            <p>Compelling blog posts, articles, and multimedia content to build authority and strengthen SEO performance.</p>
+          </article>
+          <article class="card">
+            <h3>Social Media Advertising & Management</h3>
+            <p>Organic and paid campaigns across Facebook, Instagram, LinkedIn, and Twitter to drive engagement and leads.</p>
+          </article>
+          <article class="card">
+            <h3>Result-Driven Strategy</h3>
+            <p>Marketing execution built around business objectives, audience intent, and measurable outcomes.</p>
+          </article>
+          <article class="card">
+            <h3>Unified Multi-Channel Presence</h3>
+            <p>Aligned messaging across web, email, content, and social channels to build stronger brand consistency.</p>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section class="container reveal">
-      <div class="strip">
-        <h2 class="section-title" style="color:#fff; margin:0;">Ready to Dominate Search Rankings?</h2>
-        <p>
-          If you are searching for reliable SEO providers, best SEO consultants, or advanced search engine services, Best Web Developer is ready to help your business grow with clarity, consistency, and performance.
-        </p>
+    <section id="branding">
+      <div class="container">
+        <div class="section-head">
+          <h2>Branding, Product Design & Corporate Value</h2>
+          <p>Your brand identity is your promise. We craft meaningful branding and logos supported by thoughtful product design.</p>
+        </div>
+        <div class="grid-2">
+          <article class="card">
+            <h3>Branding and Logos</h3>
+            <p>Our branding designers create unique, memorable identity systems that differentiate you in competitive markets.</p>
+          </article>
+          <article class="card">
+            <h3>Product Design Excellence</h3>
+            <p>Digital and physical product design approaches that are user-friendly, visually strong, and aligned with brand values.</p>
+          </article>
+        </div>
+
+        <div class="section-head" style="margin-top: 32px;">
+          <h2>Why We Are the Best Web Design Agency for Your Business</h2>
+        </div>
+        <div class="grid-3">
+          <article class="card"><h3>Expertise Across Technologies</h3><p>From WordPress to Shopify, frontend to backend, we cover complete web design and development scope.</p></article>
+          <article class="card"><h3>End-to-End Marketing</h3><p>Integrated SEO, email, social media, and content marketing from one strategic team.</p></article>
+          <article class="card"><h3>Creative Branding Solutions</h3><p>Distinct visual identity and messaging that improve recognition and trust.</p></article>
+          <article class="card"><h3>Customer-Centric Process</h3><p>Your vision guides the process through collaborative planning and execution.</p></article>
+          <article class="card"><h3>Cutting-Edge Practices</h3><p>Modern tools and up-to-date approaches to keep your digital presence ahead.</p></article>
+          <article class="card"><h3>Proven Track Record</h3><p>Experience delivering successful projects across industries and growth stages.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
         <div class="cta">
-          <a class="btn btn-primary" href="tel:+966510451995" style="background:#fff;color:#08337a;">📞 +966510451995</a>
-          <a class="btn btn-outline" href="https://bestwebdeveloper.org" target="_blank" rel="noopener" style="border-color:rgba(255,255,255,.55); color:#fff; background:transparent;">Visit bestwebdeveloper.org</a>
+          <h2>Ready to Elevate Your Digital Presence?</h2>
+          <p>
+            Partner with Best Web Developer for website design, custom app development, ecommerce platforms,
+            and comprehensive digital marketing campaigns built for sustainable business growth.
+          </p>
+          <div class="actions" style="justify-content:center; margin-bottom:0;">
+            <a class="btn btn-primary" href="tel:+966510451995">📞 +966510451995</a>
+            <a class="btn btn-ghost" href="https://bestwebdeveloper.org" target="_blank" rel="noopener">🌐 bestwebdeveloper.org</a>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="container footer-grid">
-      <p><strong>Best Web Developer</strong> — Search Engine Optimization Services</p>
-      <p>Phone: <a href="tel:+966510451995" style="color:#fff;">+966510451995</a> | Website: <a href="https://bestwebdeveloper.org" style="color:#9ed8ff;">bestwebdeveloper.org</a></p>
+    <div class="container">
+      Best Web Developer — Web Design Services, Web Development Services, Ecommerce, Branding, SEO, Email Marketing, Content Marketing & Social Media Advertising.
     </div>
   </footer>
 
   <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('show');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.15 });
+    const navLinks = document.querySelectorAll('.menu a');
+    const sections = [...navLinks].map(link => document.querySelector(link.getAttribute('href'))).filter(Boolean);
 
-    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    const updateActiveLink = () => {
+      let currentId = '';
+      sections.forEach(section => {
+        const top = section.offsetTop - 140;
+        if (window.scrollY >= top) currentId = section.id;
+      });
+      navLinks.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === `#${currentId}`);
+      });
+    };
+
+    window.addEventListener('scroll', updateActiveLink);
+    updateActiveLink();
+
+    const counters = document.querySelectorAll('[data-count]');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const target = Number(el.getAttribute('data-count'));
+        let value = 0;
+        const step = Math.max(1, Math.ceil(target / 35));
+        const timer = setInterval(() => {
+          value += step;
+          if (value >= target) {
+            value = target;
+            clearInterval(timer);
+          }
+          el.textContent = value;
+        }, 35);
+        observer.unobserve(el);
+      });
+    }, { threshold: 0.5 });
+
+    counters.forEach(counter => observer.observe(counter));
   </script>
 </body>
 </html>
