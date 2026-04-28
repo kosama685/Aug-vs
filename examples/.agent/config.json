@@ -1,8 +1,52 @@
 {
   "defaultProvider": "mock",
-  "defaultModel": "mock-default",
+  "defaultModel": "mock-small",
   "retrievalBudgetTokens": 8000,
-  "terminalApprovalPolicy": "always",
-  "telemetry": { "enabled": false },
-  "server": { "host": "localhost", "port": 3001 }
+  "indexing": {
+    "enabled": true,
+    "maxFileSizeKB": 500,
+    "ignorePatterns": [
+      "node_modules",
+      ".git",
+      "dist",
+      "build"
+    ]
+  },
+  "terminalApprovalPolicy": "safeOnly",
+  "safeCommands": [
+    "ls",
+    "cat",
+    "echo",
+    "pnpm test"
+  ],
+  "enabledTools": [
+    "retrieve_context",
+    "read_file",
+    "write_patch",
+    "terminal",
+    "git_status",
+    "git_diff",
+    "git_branch",
+    "git_stage",
+    "git_commit",
+    "git_log",
+    "memory_read",
+    "memory_update",
+    "mcp_call",
+    "read_lints",
+    "format_code",
+    "create_file",
+    "delete_file"
+  ],
+  "mcpServers": [],
+  "telemetry": {
+    "enabled": false
+  },
+  "server": {
+    "host": "localhost",
+    "port": 3001
+  },
+  "ui": {
+    "theme": "dark"
+  }
 }
