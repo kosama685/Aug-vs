@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Social Media Services by Best Web Developer — expert social media management and social media advertising tailored to your business goals."
+  />
+  <title>Social Media Agency | Best Web Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      --bg: #020617;
+      --surface: rgba(15, 23, 42, 0.78);
+      --surface-strong: rgba(15, 23, 42, 0.94);
+      --line: rgba(148, 163, 184, 0.25);
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --primary: #22d3ee;
+      --secondary: #38bdf8;
+      --accent: #34d399;
+      --radius: 18px;
+      --max: 1180px;
+      --shadow: 0 25px 45px rgba(2, 6, 23, 0.35);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+      background:
+        radial-gradient(circle at 12% 10%, rgba(34, 211, 238, 0.18), transparent 28%),
+        radial-gradient(circle at 90% 14%, rgba(56, 189, 248, 0.18), transparent 30%),
+        radial-gradient(circle at 64% 86%, rgba(52, 211, 153, 0.16), transparent 28%),
+        var(--bg);
+      min-height: 100vh;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 2.2rem));
+      margin: 0 auto;
+    }
+
+    .glass {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow);
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: rgba(2, 6, 23, 0.78);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(10px);
+    }
+
+    .topbar-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 64px;
+      gap: 1rem;
+      flex-wrap: wrap;
+      padding: 0.6rem 0;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      font-size: 1rem;
+    }
+
+    .brand strong {
+      color: var(--primary);
+      font-weight: 900;
+    }
+
+    .contact-links {
+      display: flex;
+      gap: 0.65rem;
+      flex-wrap: wrap;
+    }
+
+    .chip {
+      text-decoration: none;
+      color: var(--text);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 0.45rem 0.85rem;
+      font-size: 0.84rem;
+      background: rgba(148, 163, 184, 0.08);
+    }
+
+    .hero {
+      padding: 4.6rem 0 2.4rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 1.2rem;
+      align-items: stretch;
+    }
+
+    .hero-panel {
+      padding: 1.5rem;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      padding: 0.42rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--accent);
+      background: rgba(52, 211, 153, 0.08);
+    }
+
+    h1 {
+      margin: 0.95rem 0 0.8rem;
+      font-size: clamp(2rem, 5vw, 3.35rem);
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+    }
+
+    .gradient {
+      background: linear-gradient(120deg, #67e8f9 0%, #7dd3fc 45%, #6ee7b7 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      color: var(--muted);
+      margin: 0;
+      max-width: 60ch;
+    }
+
+    .actions {
+      margin-top: 1.25rem;
+      display: flex;
+      gap: 0.7rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      border: 1px solid transparent;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      padding: 0.74rem 1.05rem;
+      transition: transform 0.2s ease;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-primary {
+      color: #05222b;
+      background: linear-gradient(120deg, var(--primary), var(--secondary), var(--accent));
+    }
+
+    .btn-secondary {
+      color: var(--text);
+      border-color: var(--line);
+      background: rgba(148, 163, 184, 0.08);
+    }
+
+    .quick-stats {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.75rem;
+      margin-top: 1.1rem;
+    }
+
+    .stat {
+      padding: 0.8rem;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(15, 23, 42, 0.75);
+    }
+
+    .stat-number {
+      font-size: 1.45rem;
+      font-weight: 800;
+      line-height: 1;
+      color: var(--primary);
+    }
+
+    .stat small {
+      display: block;
+      margin-top: 0.35rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .section {
+      padding: 1rem 0 2.8rem;
+    }
+
+    .heading {
+      text-align: center;
+      margin-bottom: 1.35rem;
+    }
+
+    h2 {
+      margin: 0.6rem 0;
+      font-size: clamp(1.45rem, 3.2vw, 2.25rem);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    .lead {
+      color: var(--muted);
+      margin: 0 auto;
+      max-width: 75ch;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.75rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.95rem;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: linear-gradient(180deg, rgba(148, 163, 184, 0.1), rgba(148, 163, 184, 0.04));
+      padding: 1rem;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(34, 211, 238, 0.55);
+    }
+
+    .card h3 {
+      margin: 0 0 0.45rem;
+      font-size: 1.02rem;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .service-list {
+      margin: 0.8rem 0 0;
+      padding-left: 1rem;
+      color: var(--muted);
+    }
+
+    .service-list li { margin-bottom: 0.4rem; }
+
+    .highlight {
+      padding: 1.15rem;
+      background: linear-gradient(130deg, rgba(34, 211, 238, 0.2), rgba(52, 211, 153, 0.14));
+      border: 1px solid rgba(103, 232, 249, 0.3);
+      border-radius: 16px;
+    }
+
+    .highlight p {
+      margin: 0;
+      color: #cbeaf5;
+    }
+
+    .footer {
+      padding: 1rem 0 2.2rem;
+    }
+
+    .footer-box {
+      padding: 1.2rem;
+      text-align: center;
+      background: var(--surface-strong);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 1024px) {
+      .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .hero-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 720px) {
+      .grid-2, .quick-stats, .grid-4 { grid-template-columns: 1fr; }
+      .hero { padding-top: 3.8rem; }
+      .topbar-wrap { justify-content: center; }
+      .brand { text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-wrap">
+      <div class="brand">Best <strong>Web Developer</strong> • Social Media Agency</div>
+      <div class="contact-links">
+        <a class="chip" href="tel:+966510451995">📱 +966510451995</a>
+        <a class="chip" href="https://bestwebdeveloper.org" target="_blank" rel="noopener">🌐 bestwebdeveloper.org</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <article class="hero-panel glass reveal">
+          <span class="eyebrow">Social Media Services</span>
+          <h1>
+            Social Media Services by <span class="gradient">Best Web Developer</span>
+          </h1>
+          <p>
+            In today’s digital age, a strong social media presence is essential for building brand awareness, engaging with your audience,
+            and driving business growth. We deliver expert social media management and social media advertising services tailored to your unique needs.
+          </p>
+          <div class="actions">
+            <a href="#services" class="btn btn-primary">Explore Services</a>
+            <a href="#contact" class="btn btn-secondary">Talk to Our Team</a>
+          </div>
+        </article>
+
+        <aside class="hero-panel glass reveal">
+          <h3>Why Social Media Matters for Your Business</h3>
+          <div class="quick-stats">
+            <div class="stat">
+              <div class="stat-number" data-count="100">0</div>
+              <small>Expand your reach to new and diverse audiences</small>
+            </div>
+            <div class="stat">
+              <div class="stat-number" data-count="100">0</div>
+              <small>Build a loyal community around your brand</small>
+            </div>
+            <div class="stat">
+              <div class="stat-number" data-count="100">0</div>
+              <small>Drive traffic to your website and increase sales</small>
+            </div>
+            <div class="stat">
+              <div class="stat-number" data-count="100">0</div>
+              <small>Gain insights through feedback and analytics</small>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="services" class="section">
+      <div class="container">
+        <div class="heading reveal">
+          <span class="eyebrow">Our Social Media Services</span>
+          <h2>Comprehensive Management & Advertising Solutions</h2>
+          <p class="lead">
+            At Best Web Developer, we provide complete social media management and advertising solutions designed to maximize ROI. From strategy development to content creation and paid campaigns, every step is aligned with your goals.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <article class="card reveal">
+            <h3>Social Media Management</h3>
+            <p>We take the hassle out of daily social media operations by delivering consistent and engaging content.</p>
+            <ul class="service-list">
+              <li>Creating custom social media design and graphics</li>
+              <li>Crafting compelling post content aligned with your brand voice</li>
+              <li>Scheduling and publishing on Facebook, Instagram, LinkedIn, and Twitter</li>
+              <li>Monitoring engagement and responding to followers</li>
+            </ul>
+          </article>
+
+          <article class="card reveal">
+            <h3>Social Media Advertising</h3>
+            <p>Our targeted ad campaigns reach potential customers precisely when they are most receptive.</p>
+            <ul class="service-list">
+              <li>Audience-focused ad targeting and campaign setup</li>
+              <li>Creative testing and messaging optimization</li>
+              <li>Smart budget control to improve advertising efficiency</li>
+              <li>Performance analysis to increase campaign impact</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="heading reveal">
+          <span class="eyebrow">Why Choose Us</span>
+          <h2>Corporate-Ready Strategy with Measurable Growth</h2>
+        </div>
+
+        <div class="grid-4">
+          <article class="card reveal">
+            <h3>Creative + Technology</h3>
+            <p>We combine professional design standards with modern digital execution to strengthen your brand image.</p>
+          </article>
+          <article class="card reveal">
+            <h3>Data-Driven Decisions</h3>
+            <p>Campaign actions are informed by analytics, engagement behavior, and performance trends.</p>
+          </article>
+          <article class="card reveal">
+            <h3>Customized Campaigns</h3>
+            <p>Every social strategy is tailored to your business objectives and audience preferences.</p>
+          </article>
+          <article class="card reveal">
+            <h3>Brand Loyalty Focus</h3>
+            <p>We build ongoing customer relationships through consistent, quality communication across channels.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="highlight reveal">
+          <h2>Ready to Amplify Your Social Media?</h2>
+          <p>
+            Partner with Best Web Developer and experience the difference a dedicated social media agency can make.
+            Contact us today and start transforming your social media marketing with a strategy built for long-term growth.
+          </p>
+          <div class="actions" style="margin-top: 1rem;">
+            <a href="https://bestwebdeveloper.org" class="btn btn-primary" target="_blank" rel="noopener">Visit Social Media Agency Page</a>
+            <a href="tel:+966510451995" class="btn btn-secondary">Call +966510451995</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-box reveal">
+        <strong>Best Web Developer</strong><br />
+        Trusted Marketing Company for Social Media Management and Social Media Advertising.<br />
+        Website: <a href="https://bestwebdeveloper.org" target="_blank" rel="noopener">bestwebdeveloper.org</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const revealElements = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealElements.forEach((el) => observer.observe(el));
+
+    const counters = document.querySelectorAll('[data-count]');
+    counters.forEach((counter) => {
+      const end = Number(counter.dataset.count);
+      let current = 0;
+      const step = Math.max(1, Math.floor(end / 45));
+
+      const tick = () => {
+        current += step;
+        if (current >= end) {
+          counter.textContent = end + '%';
+          return;
+        }
+        counter.textContent = current + '%';
+        requestAnimationFrame(tick);
+      };
+
+      tick();
+    });
+  </script>
+</body>
+</html>
