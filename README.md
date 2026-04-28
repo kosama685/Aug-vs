@@ -1,93 +1,95 @@
-# Aug VS Agent
+# Aug VS — Local-First Agentic Coding IDE
 
-Open-source AI coding agent platform with a VS Code extension, shared TypeScript core, CLI, and JetBrains scaffold.
+Aug VS is an open-source, web-based AI coding IDE designed for local development with a VS Code-like interface and an integrated coding agent.
+
+## No Login / No Registration
+
+This project intentionally has:
+- no login page,
+- no registration,
+- no user accounts,
+- no backend identity/auth system.
+
+You can run immediately with the **Mock provider**. Optional BYOK keys are local-only configuration.
+
+## Core Capabilities
+
+- VS Code-like web layout (activity bar, sidebar, tabs, editor, terminal, status bar).
+- Shared core package for retrieval, providers, tools, MCP, and agent-loop primitives.
+- CLI package that reuses core.
+- Local server scaffold for workspace, git, tools, and websocket channels.
+- Provider registry with mock and DeepSeek reference adapter.
+- Context engine primitives: scanner, ignore matching, chunking, BM25, vector index, RRF, token budget.
+- Query classifier + multi-stage agent-loop scaffolding.
+- VS Code extension scaffold + JetBrains plugin scaffold.
 
 ## Safety & Compliance
-- Uses provider-compliant auth only (API key/OAuth/device-code/local models).
-- Does **not** use browser cookie extraction, web-session scraping, private endpoints, or anti-bot bypass.
-- Telemetry is opt-in and disabled by default.
 
-## Features
-- Multi-provider architecture with registry and typed adapters.
-- DeepSeek reference provider (official API style with API key).
-- Retrieval engine: scanner, `.agentignore`, chunking, BM25, vector search, RRF, token budget.
-- Intent-aware query classifier.
-- Agent loop with planning + retrieval + model execution.
-- Tool registry, patch validation, terminal safety policy, memory store.
-- VS Code extension scaffold and CLI scaffold.
-- JetBrains plugin scaffold.
+- Provider-compliant auth only (API keys/OAuth/device-code where officially supported).
+- No browser cookie extraction.
+- No private endpoint reverse engineering.
+- No anti-bot bypass or rate-limit circumvention.
+- Telemetry disabled by default.
 
-## Monorepo
-- `packages/core`: shared engine and interfaces.
-- `packages/cli`: terminal app.
-- `extensions/vscode`: VS Code extension.
-- `plugins/jetbrains`: JetBrains plugin scaffold.
+## Monorepo Layout
 
-## Install
+- `apps/web` — web IDE frontend (Vite + React)
+- `apps/server` — local server (Express + WS scaffold)
+- `packages/core` — shared retrieval/provider/agent/tool code
+- `packages/cli` — command-line interface
+- `extensions/vscode` — optional extension scaffold
+- `plugins/jetbrains` — optional plugin scaffold
+- `docs` — architecture, security, tools, providers, and setup docs
+- `examples` — sample `.agent` config and ignore files
+
+## Quick Start
+
 ```bash
 pnpm install
-pnpm build
+pnpm dev
 ```
 
-## Development
+## Build & Validate
+
 ```bash
-pnpm typecheck
+pnpm build
 pnpm test
 pnpm lint
+pnpm typecheck
 ```
 
-## Prompt templates
-- Reusable full-spec prompt for generating a web-based VS Code-like AI IDE (no login/register): `docs/prompts/web-ide-agent-prompt.md`.
+## Provider Setup
 
-## Usage
-```bash
-pnpm --filter @aug-vs/cli build
-node packages/cli/dist/index.js providers list
-```
+- Default: `mock` provider (no credentials required).
+- Optional: configure cloud providers with local secret storage.
+- Optional local models: Ollama (`http://localhost:11434`).
 
-## Provider configuration
-- Store keys in a secret store implementation (VS Code SecretStorage, OS keychain-backed implementation, or secure host service).
-- DeepSeek adapter uses `aug-vs/deepseek` + `apiKey` secret coordinates.
+## Example `.agentignore`
 
-## Local model setup
-- Use provider adapter interface for Ollama/llama.cpp local adapters in future packages.
-
-## `.agentignore` example
 ```gitignore
 node_modules/
-dist/
 .git/
+dist/
 ```
 
-## Token budget
-- Retrieval budget defaults to `8000` tokens (`.agent/config.json`).
+## Documentation
 
-## Tool approval
-- Patch tool validates diff and requires host approval before apply.
-- Terminal tool uses command risk classification and approval gate.
-
-## MCP support
-- Core includes MCP client abstraction and null client fallback.
-
-## Memory behavior
-- `.agent/memory.md` stores concise project memory and redacts secret-like entries.
-
-## Troubleshooting
-- Auth failure: reconfigure provider key or switch to mock/local provider.
-- Indexing failure: fallback to file-local mode and continue.
-
-## Security model
-See `docs/security.md`.
-
-## Roadmap
-- Add official OpenAI/Anthropic/Gemini/Mistral/Ollama adapters.
-- Add richer VS Code chat UI with per-hunk patch approvals.
-- Add persisted vector index and symbol graph backend.
-
-## Contributing
-1. Fork and create a feature branch.
-2. Run `pnpm test`, `pnpm typecheck`, `pnpm lint`.
-3. Open PR with tests.
+- `docs/architecture.md`
+- `docs/security.md`
+- `docs/providers.md`
+- `docs/context-engine.md`
+- `docs/query-classifier.md`
+- `docs/agent-loop.md`
+- `docs/tools.md`
+- `docs/web-ide.md`
+- `docs/configuration.md`
+- `docs/cli.md`
+- `docs/mcp.md`
+- `docs/vscode-extension.md`
+- `docs/jetbrains.md`
+- `docs/development.md`
+- `docs/installation.md`
 
 ## License
+
 MIT
