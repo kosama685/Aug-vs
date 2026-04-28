@@ -1,0 +1,44 @@
+{
+  "name": "aug-vs-agent-vscode",
+  "displayName": "Aug VS Agent",
+  "version": "0.1.0",
+  "publisher": "aug-vs",
+  "engines": { "vscode": "^1.100.0" },
+  "main": "./dist/extension.js",
+  "activationEvents": [
+    "onCommand:agent.openChat",
+    "onCommand:agent.indexWorkspace"
+  ],
+  "contributes": {
+    "commands": [
+      { "command": "agent.openChat", "title": "Agent: Open Chat" },
+      { "command": "agent.indexWorkspace", "title": "Agent: Index Workspace" },
+      { "command": "agent.clearIndex", "title": "Agent: Clear Index" },
+      { "command": "agent.selectProvider", "title": "Agent: Select Provider" },
+      { "command": "agent.configureProvider", "title": "Agent: Configure Provider" },
+      { "command": "agent.toggleSearch", "title": "Agent: Toggle Codebase Search" },
+      { "command": "agent.applyLastPatch", "title": "Agent: Apply Last Patch" },
+      { "command": "agent.rejectLastPatch", "title": "Agent: Reject Last Patch" }
+    ],
+    "configuration": {
+      "title": "Aug VS Agent",
+      "properties": {
+        "agent.retrievalBudgetTokens": { "type": "number", "default": 8000 },
+        "agent.quickMode": { "type": "boolean", "default": true },
+        "agent.deepMode": { "type": "boolean", "default": false }
+      }
+    }
+  },
+  "scripts": {
+    "build": "tsup src/extension.ts --format cjs --dts",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "eslint src --ext .ts",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.100.0"
+  },
+  "dependencies": {
+    "@aug-vs/core": "workspace:*"
+  }
+}

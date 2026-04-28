@@ -1,0 +1,17 @@
+{
+  "name": "@aug-vs/cli",
+  "version": "0.1.0",
+  "type": "module",
+  "bin": {
+    "agent": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "eslint src --ext .ts",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@aug-vs/core": "workspace:*"
+  }
+}

@@ -1,25 +1,16 @@
 {
-  "name": "@aug-agent/core",
+  "name": "@aug-vs/core",
   "version": "0.1.0",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc -p tsconfig.json",
+    "build": "tsup src/index.ts --format esm,cjs --dts",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "lint": "eslint src --ext .ts"
+    "lint": "eslint src test --ext .ts",
+    "test": "vitest run"
   },
   "dependencies": {
-    "@vscode/ripgrep": "^1.15.12",
-    "chokidar": "^4.0.1",
-    "fast-glob": "^3.3.3",
-    "keytar": "^7.9.0",
-    "playwright": "^1.54.1",
-    "sqlite3": "^5.1.7",
-    "tree-sitter": "^0.22.4"
-  },
-  "devDependencies": {
-    "@types/node": "^24.3.0",
-    "typescript": "^5.9.2"
+    "minimatch": "^10.0.1"
   }
 }

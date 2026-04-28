@@ -1,9 +1,9 @@
 node_modules/
+.git/
 .venv/
 dist/
 build/
 vendor/
-.git/
 *.lock
 package-lock.json
 pnpm-lock.yaml

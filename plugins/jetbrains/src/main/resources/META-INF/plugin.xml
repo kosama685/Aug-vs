@@ -1,0 +1,15 @@
+<idea-plugin>
+  <id>com.augagent.plugin</id>
+  <name>Aug VS Agent</name>
+  <vendor>Aug VS</vendor>
+  <description>JetBrains scaffold for Aug VS Agent.</description>
+  <depends>com.intellij.modules.platform</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <toolWindow id="AugAgent" factoryClass="com.augagent.AgentToolWindowFactory" anchor="right"/>
+  </extensions>
+
+  <actions>
+    <action id="AugAgent.OpenToolWindow" class="com.augagent.OpenAgentToolWindowAction" text="Open Agent Tool Window" />
+  </actions>
+</idea-plugin>

@@ -1,17 +1,26 @@
 {
-  "name": "aug-agent-monorepo",
+  "name": "aug-vs-agent",
   "private": true,
   "version": "0.1.0",
-  "description": "Open-source coding agent extension with browser-session authenticated multi-LLM support",
-  "workspaces": [
-    "packages/*"
-  ],
-  "scripts": {
-    "build": "npm run -ws build",
-    "typecheck": "npm run -ws typecheck",
-    "lint": "npm run -ws lint"
-  },
+  "packageManager": "pnpm@10.0.0",
   "engines": {
     "node": ">=20"
+  },
+  "scripts": {
+    "build": "pnpm -r build",
+    "test": "pnpm -r test",
+    "lint": "pnpm -r lint",
+    "typecheck": "pnpm -r typecheck"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.17",
+    "@typescript-eslint/eslint-plugin": "^8.32.0",
+    "@typescript-eslint/parser": "^8.32.0",
+    "eslint": "^9.26.0",
+    "eslint-config-prettier": "^10.1.2",
+    "prettier": "^3.5.3",
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.3"
   }
 }

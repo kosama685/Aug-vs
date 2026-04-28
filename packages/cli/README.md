@@ -1,8 +1,13 @@
-# aug-agent CLI (Rust/Go target)
+# @aug-vs/cli
 
-Starter scope:
-- `aug-agent chat` for headless turns
-- `aug-agent auth deepseek` to capture browser session
-- `aug-agent index` to warm retrieval index
+CLI host for the Aug VS Agent core runtime.
 
-The initial scaffold keeps CLI implementation decoupled from IDE-specific APIs.
+## Planned commands
+- `agent chat`
+- `agent index`
+- `agent ask "question"`
+- `agent edit "task"`
+- `agent providers list`
+- `agent providers login`
+
+Authentication support is provider-compliant only (official API keys or officially supported auth flows).
