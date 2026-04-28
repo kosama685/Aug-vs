@@ -36,6 +36,9 @@ pnpm test
 pnpm lint
 ```
 
+## Prompt templates
+- Reusable full-spec prompt for generating a web-based VS Code-like AI IDE (no login/register): `docs/prompts/web-ide-agent-prompt.md`.
+
 ## Usage
 ```bash
 pnpm --filter @aug-vs/cli build
