@@ -1,0 +1,525 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Premier Web Design Agency | UI/UX and Interactive Web Page Design by Best Web Developer."
+  />
+  <title>Premier Web Design Agency | Best Web Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      --bg: #060b1c;
+      --surface: rgba(11, 19, 47, 0.8);
+      --surface-strong: rgba(12, 22, 58, 0.95);
+      --line: rgba(148, 163, 184, 0.25);
+      --text: #e2e8f0;
+      --muted: #a8b3cf;
+      --primary: #38bdf8;
+      --secondary: #a78bfa;
+      --accent: #2dd4bf;
+      --radius: 18px;
+      --shadow: 0 24px 60px rgba(2, 6, 23, 0.45);
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      color: var(--text);
+      line-height: 1.65;
+      background:
+        radial-gradient(circle at 8% 8%, rgba(56, 189, 248, 0.22), transparent 30%),
+        radial-gradient(circle at 86% 12%, rgba(167, 139, 250, 0.2), transparent 34%),
+        radial-gradient(circle at 55% 92%, rgba(45, 212, 191, 0.18), transparent 30%),
+        var(--bg);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 2.2rem));
+      margin: 0 auto;
+    }
+
+    .glass {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--line);
+      background: rgba(6, 11, 28, 0.86);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav-wrap {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.5rem 0;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      text-decoration: none;
+      color: var(--text);
+      font-size: 1rem;
+    }
+
+    .brand span { color: var(--primary); }
+
+    .contact-links {
+      display: flex;
+      gap: 0.65rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .chip {
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.84rem;
+      padding: 0.42rem 0.82rem;
+      background: rgba(148, 163, 184, 0.1);
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .chip:hover {
+      transform: translateY(-1px);
+      border-color: rgba(148, 163, 184, 0.42);
+    }
+
+    .hero {
+      padding: 4.8rem 0 2.5rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 1rem;
+      align-items: stretch;
+    }
+
+    .hero-panel,
+    .hero-summary {
+      padding: 1.5rem;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      padding: 0.4rem 0.78rem;
+      font-size: 0.73rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: rgba(45, 212, 191, 0.1);
+    }
+
+    h1 {
+      margin: 0.85rem 0 0.85rem;
+      font-size: clamp(2.1rem, 5vw, 3.35rem);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+    }
+
+    .gradient {
+      background: linear-gradient(120deg, #67e8f9 0%, #a5b4fc 52%, #5eead4 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .lead {
+      margin: 0;
+      color: var(--muted);
+      max-width: 62ch;
+    }
+
+    .actions {
+      margin-top: 1.2rem;
+      display: flex;
+      gap: 0.7rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      padding: 0.76rem 1.1rem;
+      transition: transform 0.2s ease;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-primary {
+      color: #03111f;
+      background: linear-gradient(120deg, var(--primary), var(--secondary), var(--accent));
+    }
+
+    .btn-secondary {
+      color: var(--text);
+      border: 1px solid var(--line);
+      background: rgba(148, 163, 184, 0.12);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.72rem;
+      margin-top: 1rem;
+    }
+
+    .stat {
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: rgba(12, 22, 58, 0.72);
+      padding: 0.82rem;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.4rem;
+      line-height: 1;
+      color: var(--primary);
+    }
+
+    .stat small {
+      display: block;
+      margin-top: 0.35rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .section {
+      padding: 1rem 0 2.8rem;
+    }
+
+    .heading {
+      text-align: center;
+      margin-bottom: 1.2rem;
+    }
+
+    .heading h2 {
+      margin: 0;
+      font-size: clamp(1.55rem, 3.4vw, 2.35rem);
+      letter-spacing: -0.02em;
+    }
+
+    .heading p {
+      margin: 0.55rem auto 0;
+      max-width: 62ch;
+      color: var(--muted);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.9rem;
+    }
+
+    .card {
+      padding: 1.3rem;
+      transition: transform 0.26s ease, border-color 0.26s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(148, 163, 184, 0.5);
+    }
+
+    .card h3 {
+      margin: 0;
+      font-size: 1.06rem;
+      letter-spacing: -0.01em;
+    }
+
+    .card p {
+      margin: 0.55rem 0 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .corporate {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.9rem;
+      align-items: stretch;
+    }
+
+    .corporate-box {
+      padding: 1.35rem;
+    }
+
+    .corporate-box ul {
+      margin: 0.8rem 0 0;
+      padding-left: 1.1rem;
+      color: var(--muted);
+      display: grid;
+      gap: 0.62rem;
+    }
+
+    .corporate-box li::marker { color: var(--accent); }
+
+    .cta {
+      padding: 2.8rem 0 4rem;
+    }
+
+    .cta-panel {
+      padding: 1.6rem;
+      text-align: center;
+      background: linear-gradient(140deg, rgba(56, 189, 248, 0.14), rgba(167, 139, 250, 0.14), rgba(45, 212, 191, 0.14));
+    }
+
+    .cta-panel p {
+      margin: 0.65rem auto 1rem;
+      color: var(--muted);
+      max-width: 62ch;
+    }
+
+    .footer {
+      border-top: 1px solid var(--line);
+      background: rgba(6, 11, 28, 0.78);
+      padding: 1rem 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: none;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .cards,
+      .corporate {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 3.6rem;
+      }
+
+      .hero-summary { order: -1; }
+    }
+
+    @media (max-width: 620px) {
+      .container { width: min(var(--max), calc(100% - 1.3rem)); }
+
+      .nav-wrap {
+        justify-content: center;
+        text-align: center;
+      }
+
+      .contact-links { justify-content: center; }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav-wrap">
+      <a href="#" class="brand">Best <span>Web Developer</span></a>
+      <div class="contact-links">
+        <a class="chip" href="tel:+966510451995">📞 +966510451995</a>
+        <a class="chip" href="https://bestwebdeveloper.org" target="_blank" rel="noopener">🌐 bestwebdeveloper.org</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <article class="glass hero-panel reveal">
+          <span class="eyebrow">Premier Web Design Agency</span>
+          <h1>
+            UI/UX &amp; <span class="gradient">Interactive Web Page Design</span>
+            by Best Web Developer
+          </h1>
+          <p class="lead">
+            Welcome to Best Web Developer, a leading web design agency dedicated to crafting beautiful, user-friendly websites that help your business shine online. Our expert team specializes in website design, UI UX design, and interactive design that not only look stunning but also deliver seamless user experiences.
+          </p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#consultation">Request Free Consultation</a>
+            <a class="btn btn-secondary" href="#services">Explore Services</a>
+          </div>
+        </article>
+
+        <aside class="glass hero-summary reveal">
+          <h3>Performance Snapshot</h3>
+          <p class="lead">
+            We combine strategic design thinking, corporate-grade visual systems, and conversion-focused UX patterns to transform your digital presence.
+          </p>
+          <div class="stats">
+            <div class="stat">
+              <strong data-count="100">0</strong>
+              <small>Custom, brand-tailored design approach</small>
+            </div>
+            <div class="stat">
+              <strong data-count="24">0</strong>
+              <small>Responsive support across all devices</small>
+            </div>
+            <div class="stat">
+              <strong data-count="99">0</strong>
+              <small>UI/UX best-practice integration focus</small>
+            </div>
+            <div class="stat">
+              <strong data-count="1">0</strong>
+              <small>One dedicated partner from concept to launch</small>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="heading reveal">
+          <h2>Design Services Built to Captivate, Engage, and Convert</h2>
+          <p>
+            We translate your brand vision into polished digital experiences with structured layouts, intuitive flows, and immersive interactions.
+          </p>
+        </div>
+
+        <div class="cards">
+          <article class="glass card reveal">
+            <h3>Custom Web Page Design That Captivates</h3>
+            <p>
+              Your website is often the first impression your customers have of your brand. Our web page design services focus on visually appealing layouts that engage visitors and guide them effortlessly through your content, with responsive design and clean navigation that support higher conversions.
+            </p>
+          </article>
+
+          <article class="glass card reveal">
+            <h3>Expert UI/UX Design for Exceptional User Experience</h3>
+            <p>
+              Great UI UX design is at the heart of effective website design. We blend aesthetics with functionality to create intuitive interfaces that keep users engaged. Our user-centric principles ensure fast, easy, and enjoyable experiences across all devices.
+            </p>
+          </article>
+
+          <article class="glass card reveal">
+            <h3>Interactive Design That Engages and Converts</h3>
+            <p>
+              Bring your website to life with interactive design features including dynamic sections, animated highlights, and purposeful interactions that captivate your audience and encourage action.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container corporate">
+        <article class="glass corporate-box reveal">
+          <h2>Why Choose Best Web Developer?</h2>
+          <ul>
+            <li>Comprehensive web design services from concept to launch.</li>
+            <li>Custom designs aligned with your brand identity and business goals.</li>
+            <li>Strong focus on responsive and accessible design on every device.</li>
+            <li>Seamless integration of UI/UX design best practices.</li>
+            <li>Commitment to websites that perform, impress, and convert.</li>
+          </ul>
+        </article>
+
+        <article class="glass corporate-box reveal">
+          <h2>Corporate View: Professional, Reliable, Impactful</h2>
+          <p class="lead">
+            Our design language follows a corporate-grade approach: clear hierarchy, consistent spacing, credible typography, and purposeful call-to-action placement. This creates trust, improves user clarity, and supports long-term brand positioning.
+          </p>
+          <p class="lead" style="margin-top: 0.9rem;">
+            Whether you need a complete website redesign or a fresh interactive landing page, our team builds an experience that reflects your business authority while remaining modern and memorable.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="cta" id="consultation">
+      <div class="container">
+        <article class="glass cta-panel reveal">
+          <h2>Ready to Transform Your Online Presence?</h2>
+          <p>
+            Partner with Best Web Developer for professional website design and expert UI UX design that elevates your brand and engages your customers. Visit our UI/UX Design Services page to learn more or request your free consultation today.
+          </p>
+          <div class="actions" style="justify-content: center;">
+            <a class="btn btn-primary" href="tel:+966510451995">Call: +966510451995</a>
+            <a class="btn btn-secondary" href="https://bestwebdeveloper.org" target="_blank" rel="noopener">Visit bestwebdeveloper.org</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      © <span id="year"></span> Best Web Developer · Premier Website Design · UI/UX · Interactive Design
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const revealElements = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    revealElements.forEach((el) => io.observe(el));
+
+    const counters = document.querySelectorAll('[data-count]');
+    counters.forEach((counter) => {
+      const target = Number(counter.getAttribute('data-count'));
+      let count = 0;
+      const speed = Math.max(10, Math.floor(800 / target));
+      const timer = setInterval(() => {
+        count += 1;
+        counter.textContent = `${count}${target >= 99 ? '%' : '+'}`;
+        if (count >= target) {
+          clearInterval(timer);
+          counter.textContent = `${target}${target >= 99 ? '%' : '+'}`;
+        }
+      }, speed);
+    });
+  </script>
+</body>
+</html>
