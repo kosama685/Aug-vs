@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Best Web Developer is a full-service web design, web development, SEO, branding, and digital marketing agency helping businesses grow online."
+  />
+  <title>Best Web Developer | Web Design & Development Agency</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #040817;
+      --surface: rgba(8, 15, 37, 0.75);
+      --surface-strong: rgba(10, 19, 46, 0.95);
+      --text: #e2e8f0;
+      --muted: #9fb0ce;
+      --line: rgba(148, 163, 184, 0.25);
+      --primary: #38bdf8;
+      --secondary: #a78bfa;
+      --accent: #2dd4bf;
+      --danger: #fb7185;
+      --radius: 18px;
+      --shadow: 0 26px 60px rgba(1, 6, 18, 0.5);
+      --max: 1160px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      line-height: 1.65;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 8% 12%, rgba(56, 189, 248, 0.20), transparent 30%),
+        radial-gradient(circle at 90% 8%, rgba(167, 139, 250, 0.2), transparent 30%),
+        radial-gradient(circle at 48% 90%, rgba(45, 212, 191, 0.15), transparent 28%),
+        var(--bg);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 2rem));
+      margin: 0 auto;
+    }
+
+    .glass {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--line);
+      background: rgba(4, 8, 23, 0.86);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav-wrap {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.9rem;
+      padding: 0.4rem 0;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      font-size: 1.05rem;
+    }
+
+    .brand span {
+      color: var(--primary);
+    }
+
+    .contacts {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      flex-wrap: wrap;
+    }
+
+    .chip {
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.84rem;
+      padding: 0.4rem 0.8rem;
+      background: rgba(148, 163, 184, 0.11);
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .chip:hover {
+      transform: translateY(-1px);
+      border-color: rgba(148, 163, 184, 0.52);
+    }
+
+    .hero {
+      padding: 4.7rem 0 2.8rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.12fr 0.88fr;
+      gap: 0.95rem;
+    }
+
+    .hero-main,
+    .hero-stats {
+      padding: 1.45rem;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      color: var(--accent);
+      background: rgba(45, 212, 191, 0.11);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.38rem 0.76rem;
+    }
+
+    h1 {
+      margin: 0.75rem 0 0.8rem;
+      font-size: clamp(2rem, 5vw, 3.3rem);
+      line-height: 1.07;
+      letter-spacing: -0.03em;
+    }
+
+    .gradient {
+      background: linear-gradient(120deg, #67e8f9 0%, #a5b4fc 45%, #5eead4 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    p.lead {
+      margin: 0;
+      color: var(--muted);
+      max-width: 64ch;
+    }
+
+    .actions {
+      display: flex;
+      gap: 0.7rem;
+      flex-wrap: wrap;
+      margin-top: 1.2rem;
+    }
+
+    .btn {
+      border: 0;
+      cursor: pointer;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      padding: 0.75rem 1.08rem;
+      transition: transform 0.2s ease;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-primary {
+      color: #03111f;
+      background: linear-gradient(120deg, var(--primary), var(--secondary), var(--accent));
+    }
+
+    .btn-secondary {
+      color: var(--text);
+      border: 1px solid var(--line);
+      background: rgba(148, 163, 184, 0.12);
+    }
+
+    .kpi-grid {
+      margin-top: 1rem;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.65rem;
+    }
+
+    .kpi {
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: var(--surface-strong);
+      padding: 0.8rem;
+    }
+
+    .kpi strong {
+      display: block;
+      color: var(--primary);
+      font-size: 1.35rem;
+      line-height: 1;
+    }
+
+    .kpi span {
+      display: block;
+      margin-top: 0.36rem;
+      color: var(--muted);
+      font-size: 0.87rem;
+      font-weight: 500;
+    }
+
+    .section {
+      padding: 1rem 0 2.8rem;
+    }
+
+    .heading {
+      text-align: center;
+      margin-bottom: 1.2rem;
+    }
+
+    .heading h2 {
+      margin: 0;
+      font-size: clamp(1.5rem, 3.3vw, 2.25rem);
+      letter-spacing: -0.02em;
+    }
+
+    .heading p {
+      margin: 0.55rem auto 0;
+      max-width: 64ch;
+      color: var(--muted);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.9rem;
+    }
+
+    .card {
+      padding: 1.25rem;
+      transition: transform 0.26s ease, border-color 0.26s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(148, 163, 184, 0.5);
+    }
+
+    .card h3 {
+      margin: 0;
+      font-size: 1.04rem;
+      letter-spacing: -0.01em;
+    }
+
+    .card p,
+    .card li {
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .card ul {
+      margin: 0.62rem 0 0;
+      padding-left: 1.1rem;
+      display: grid;
+      gap: 0.5rem;
+    }
+
+    .card li::marker { color: var(--accent); }
+
+    .corporate-view {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.9rem;
+    }
+
+    .corporate-box {
+      padding: 1.3rem;
+    }
+
+    .corporate-box ul {
+      margin: 0.7rem 0 0;
+      padding-left: 1.1rem;
+      color: var(--muted);
+      display: grid;
+      gap: 0.55rem;
+    }
+
+    .corporate-box li::marker { color: var(--primary); }
+
+    .cta {
+      padding: 2.6rem 0 4rem;
+    }
+
+    .cta-panel {
+      text-align: center;
+      padding: 1.5rem;
+      background: linear-gradient(140deg, rgba(56, 189, 248, 0.15), rgba(167, 139, 250, 0.13), rgba(45, 212, 191, 0.15));
+    }
+
+    .cta-panel p {
+      color: var(--muted);
+      max-width: 62ch;
+      margin: 0.6rem auto 0.9rem;
+    }
+
+    .footer {
+      border-top: 1px solid var(--line);
+      background: rgba(4, 8, 23, 0.8);
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-align: center;
+      padding: 0.95rem 0;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: none;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .cards,
+      .corporate-view {
+        grid-template-columns: 1fr;
+      }
+
+      .hero { padding-top: 3.5rem; }
+    }
+
+    @media (max-width: 620px) {
+      .container { width: min(var(--max), calc(100% - 1.2rem)); }
+
+      .nav-wrap {
+        justify-content: center;
+        text-align: center;
+      }
+
+      .contacts { justify-content: center; }
+
+      .kpi-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav-wrap">
+      <a class="brand" href="#">Best <span>Web Developer</span></a>
+      <div class="contacts">
+        <a class="chip" href="tel:+966510451995">📞 +966510451995</a>
+        <a class="chip" href="https://bestwebdeveloper.org" target="_blank" rel="noopener">🌐 bestwebdeveloper.org</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <article class="glass hero-main reveal">
+          <span class="eyebrow">Web Design and Development Agency</span>
+          <h1>Welcome to <span class="gradient">Best Web Developer</span> — Best Web Design &amp; Digital Marketing Agency</h1>
+          <p class="lead">
+            Looking for a trusted web design agency that creates stunning websites and delivers exceptional web development services? Best Web Developer is your one-stop solution for web design services, ecommerce development, WordPress solutions, Shopify store design, and complete digital marketing.
+          </p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#consultation">Get Free Consultation</a>
+            <a class="btn btn-secondary" href="#services">View Services</a>
+          </div>
+        </article>
+
+        <aside class="glass hero-stats reveal">
+          <h3>Corporate Performance Snapshot</h3>
+          <p class="lead">
+            We blend creative design, technical excellence, and business-focused strategy to build digital platforms that attract traffic, engage users, and drive long-term ROI.
+          </p>
+          <div class="kpi-grid">
+            <div class="kpi">
+              <strong data-count="100">0</strong>
+              <span>Custom, brand-aligned web experiences</span>
+            </div>
+            <div class="kpi">
+              <strong data-count="24">0</strong>
+              <span>Fast support and project communication</span>
+            </div>
+            <div class="kpi">
+              <strong data-count="99">0</strong>
+              <span>SEO and UX implementation focus</span>
+            </div>
+            <div class="kpi">
+              <strong data-count="1">0</strong>
+              <span>Single strategic partner for all services</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="heading reveal">
+          <h2>Our Core Services — Deeply Crafted for Business Growth</h2>
+          <p>We use your provided service content and present it in a clear, attractive corporate format for stronger trust, better readability, and improved conversion potential.</p>
+        </div>
+
+        <div class="cards">
+          <article class="glass card reveal">
+            <h3>Web Design Services</h3>
+            <ul>
+              <li>Web page design that is visually appealing and user-friendly.</li>
+              <li>UI/UX design for intuitive, engaging user journeys.</li>
+              <li>Interactive design that converts visitors into customers.</li>
+            </ul>
+          </article>
+
+          <article class="glass card reveal">
+            <h3>Full-Stack Web Development</h3>
+            <ul>
+              <li>Custom web development and web application development services.</li>
+              <li>Secure and scalable backend development foundations.</li>
+              <li>Seamless integration with third-party APIs and business tools.</li>
+            </ul>
+          </article>
+
+          <article class="glass card reveal">
+            <h3>Ecommerce Development</h3>
+            <ul>
+              <li>Shopify web design agency services for custom online stores.</li>
+              <li>WordPress web design agency solutions with WooCommerce.</li>
+              <li>Advanced ecommerce development for custom platforms.</li>
+            </ul>
+          </article>
+
+          <article class="glass card reveal">
+            <h3>SEO &amp; Search Engine Marketing</h3>
+            <ul>
+              <li>Complete search engine optimization services.</li>
+              <li>On-page and off-page SEO, keyword research, and link building.</li>
+              <li>Local SEO, PPC campaigns, and ranking performance tracking.</li>
+            </ul>
+          </article>
+
+          <article class="glass card reveal">
+            <h3>Email, Content &amp; Social Media</h3>
+            <ul>
+              <li>Custom email marketing campaigns and automation workflows.</li>
+              <li>Content strategy, blog writing, distribution, and optimization.</li>
+              <li>Social media management, social media design, and advertising.</li>
+            </ul>
+          </article>
+
+          <article class="glass card reveal">
+            <h3>Branding &amp; Mobile App Development</h3>
+            <ul>
+              <li>Branding strategy, logo design, and full brand guidelines.</li>
+              <li>Android development and mobile app development services.</li>
+              <li>Post-launch support and maintenance for long-term growth.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container corporate-view">
+        <article class="glass corporate-box reveal">
+          <h2>Why Best Web Developer?</h2>
+          <ul>
+            <li>Experienced web design agency and SEO consultants.</li>
+            <li>Comprehensive digital marketing services under one roof.</li>
+            <li>Specialized Shopify, WordPress, ecommerce, and app development expertise.</li>
+            <li>Creative branding team focused on memorable identity systems.</li>
+            <li>Transparent process with ROI-first execution and client satisfaction.</li>
+          </ul>
+        </article>
+
+        <article class="glass corporate-box reveal">
+          <h2>Corporate View — Enhanced and Detailed</h2>
+          <p class="lead">
+            This page is intentionally structured with executive-friendly content hierarchy: clear value proposition, service segmentation, trust cues, and strong calls-to-action. The design language uses premium gradients, glassmorphism panels, and performance indicators to communicate innovation and credibility.
+          </p>
+          <p class="lead" style="margin-top: 0.85rem;">
+            Every section emphasizes business outcomes: better visibility on search engines, stronger customer engagement, higher ecommerce conversion rates, and scalable digital infrastructure.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="cta" id="consultation">
+      <div class="container">
+        <article class="glass cta-panel reveal">
+          <h2>Get in Touch — Let’s Grow Your Business Together</h2>
+          <p>
+            Whether you need premium web design services, powerful web development, reliable SEO, or a full digital marketing package, Best Web Developer is ready to help you scale with confidence.
+          </p>
+          <div class="actions" style="justify-content: center;">
+            <a class="btn btn-primary" href="tel:+966510451995">Call Now: +966510451995</a>
+            <a class="btn btn-secondary" href="https://bestwebdeveloper.org" target="_blank" rel="noopener">Visit bestwebdeveloper.org</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      © <span id="year"></span> Best Web Developer · Web Design · Web Development · Digital Marketing Agency
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const revealElements = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.16 });
+
+    revealElements.forEach((el) => io.observe(el));
+
+    const counters = document.querySelectorAll('[data-count]');
+    counters.forEach((counter) => {
+      const target = Number(counter.dataset.count || 0);
+      let count = 0;
+      const stepMs = Math.max(12, Math.floor(900 / Math.max(1, target)));
+
+      const timer = setInterval(() => {
+        count += 1;
+        const suffix = target >= 99 ? '%' : '+';
+        counter.textContent = `${count}${suffix}`;
+
+        if (count >= target) {
+          clearInterval(timer);
+          counter.textContent = `${target}${suffix}`;
+        }
+      }, stepMs);
+    });
+  </script>
+</body>
+</html>
