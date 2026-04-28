@@ -1,0 +1,572 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Expert branding designer and logo design services by Best Web Developer. Build a strong, memorable brand identity with strategic and creative branding solutions."
+  />
+  <title>Brand Designs Services | Best Web Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      --bg: #0b1020;
+      --surface: rgba(10, 18, 36, 0.8);
+      --surface-strong: rgba(10, 18, 36, 0.95);
+      --line: rgba(99, 102, 241, 0.25);
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --primary: #8b5cf6;
+      --secondary: #22d3ee;
+      --accent: #f59e0b;
+      --radius: 18px;
+      --max: 1160px;
+      --shadow: 0 24px 50px rgba(0, 0, 0, 0.35);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      font-family: "Inter", sans-serif;
+      line-height: 1.65;
+      background:
+        radial-gradient(circle at 8% 12%, rgba(139, 92, 246, 0.25), transparent 28%),
+        radial-gradient(circle at 88% 18%, rgba(34, 211, 238, 0.2), transparent 32%),
+        radial-gradient(circle at 78% 84%, rgba(245, 158, 11, 0.14), transparent 30%),
+        var(--bg);
+      min-height: 100vh;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 2rem));
+      margin: 0 auto;
+    }
+
+    .glass {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      backdrop-filter: blur(14px);
+      box-shadow: var(--shadow);
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      border-bottom: 1px solid var(--line);
+      background: rgba(5, 10, 22, 0.78);
+      backdrop-filter: blur(12px);
+    }
+
+    .topbar-wrap {
+      min-height: 66px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      padding: 0.55rem 0;
+    }
+
+    .brand {
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      font-size: 1.02rem;
+    }
+
+    .brand span { color: var(--secondary); }
+
+    .contact-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .chip {
+      text-decoration: none;
+      color: var(--text);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      padding: 0.4rem 0.85rem;
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .hero { padding: 4.2rem 0 2rem; }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 1.1rem;
+      align-items: stretch;
+    }
+
+    .hero-card { padding: 1.55rem; }
+
+    .eyebrow {
+      display: inline-flex;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 0.4rem 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.72rem;
+      color: var(--accent);
+      font-weight: 700;
+      background: rgba(245, 158, 11, 0.08);
+    }
+
+    h1 {
+      margin: 0.9rem 0 0.85rem;
+      line-height: 1.08;
+      font-size: clamp(2rem, 5.2vw, 3.4rem);
+      letter-spacing: -0.03em;
+    }
+
+    .gradient {
+      background: linear-gradient(120deg, #c4b5fd 0%, #67e8f9 55%, #fde68a 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      margin: 0;
+      max-width: 64ch;
+      color: var(--muted);
+    }
+
+    .actions {
+      margin-top: 1.2rem;
+      display: flex;
+      gap: 0.68rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      border-radius: 12px;
+      border: 1px solid transparent;
+      padding: 0.72rem 1.05rem;
+      text-decoration: none;
+      font-weight: 700;
+      transition: transform 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-primary {
+      color: #100a24;
+      background: linear-gradient(120deg, var(--primary), var(--secondary), #facc15);
+    }
+
+    .btn-secondary {
+      color: var(--text);
+      border-color: var(--line);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .stats {
+      margin-top: 1.05rem;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.7rem;
+    }
+
+    .stat {
+      padding: 0.84rem;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(9, 16, 32, 0.85);
+    }
+
+    .stat b {
+      display: block;
+      font-size: 1.4rem;
+      color: var(--secondary);
+      line-height: 1;
+    }
+
+    .stat span {
+      font-size: 0.86rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .section { padding: 1rem 0 2.6rem; }
+
+    .heading {
+      text-align: center;
+      margin-bottom: 1.3rem;
+    }
+
+    .heading h2 {
+      margin: 0;
+      font-size: clamp(1.45rem, 3.3vw, 2.2rem);
+      letter-spacing: -0.02em;
+    }
+
+    .heading p {
+      margin: 0.5rem auto 0;
+      color: var(--muted);
+      max-width: 66ch;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.9rem;
+    }
+
+    .feature {
+      padding: 1rem;
+      border-radius: 15px;
+      border: 1px solid var(--line);
+      background: rgba(14, 23, 44, 0.72);
+    }
+
+    .feature h3 { margin: 0 0 0.45rem; font-size: 1.03rem; }
+
+    .feature p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 0.65rem;
+    }
+
+    .step {
+      position: relative;
+      padding: 0.9rem;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: rgba(14, 23, 44, 0.72);
+      overflow: hidden;
+    }
+
+    .step::before {
+      content: attr(data-step);
+      position: absolute;
+      top: 0.45rem;
+      right: 0.55rem;
+      font-weight: 800;
+      color: rgba(156, 163, 175, 0.3);
+    }
+
+    .step h4 { margin: 0 0 0.35rem; font-size: 0.98rem; }
+
+    .step p { margin: 0; color: var(--muted); font-size: 0.9rem; }
+
+    .accordion { display: grid; gap: 0.65rem; }
+
+    .qa {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      overflow: hidden;
+      background: rgba(12, 21, 40, 0.75);
+    }
+
+    .qa button {
+      width: 100%;
+      border: 0;
+      background: transparent;
+      color: var(--text);
+      text-align: left;
+      font-size: 0.98rem;
+      font-weight: 700;
+      padding: 0.88rem 1rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .qa .answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.24s ease;
+      padding: 0 1rem;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .qa.active .answer {
+      max-height: 180px;
+      padding-bottom: 0.95rem;
+    }
+
+    .cta {
+      padding: 1.4rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+      background: linear-gradient(120deg, rgba(139, 92, 246, 0.2), rgba(34, 211, 238, 0.16));
+    }
+
+    .cta h3 { margin: 0 0 0.3rem; font-size: 1.35rem; }
+    .cta p { margin: 0; color: var(--muted); }
+
+    footer {
+      padding: 2rem 0 2.2rem;
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.45s ease, transform 0.45s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .grid-3,
+      .process {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .topbar-wrap { justify-content: center; }
+      .hero { padding-top: 3.6rem; }
+      .hero-grid,
+      .grid-3,
+      .process,
+      .stats {
+        grid-template-columns: 1fr;
+      }
+      .cta { padding: 1.1rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-wrap">
+      <div class="brand">Best <span>Web Developer</span> — Branding Studio</div>
+      <div class="contact-chips">
+        <a class="chip" href="https://bestwebdeveloper.org" target="_blank" rel="noopener">bestwebdeveloper.org</a>
+        <a class="chip" href="tel:+966510451995">+966510451995</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <article class="glass hero-card reveal">
+          <span class="eyebrow">brand-designs-services</span>
+          <h1>Expert Branding Designer & <span class="gradient">Logo Design Services</span></h1>
+          <p>
+            A powerful brand is more than just a name — it is the story, values, and promise your business delivers to the world.
+            At Best Web Developer, we create strategic branding and memorable logos that help your company stand out in a competitive market.
+          </p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#contact">Start Your Brand Project</a>
+            <a class="btn btn-secondary" href="#strategy">View Branding Strategy</a>
+          </div>
+        </article>
+
+        <aside class="glass hero-card reveal" aria-label="brand highlights">
+          <h2 style="margin:0 0 0.7rem; font-size:1.2rem;">Corporate-Ready Brand Outcomes</h2>
+          <p style="margin:0; color:var(--muted);">
+            We build complete identity systems designed for websites, social media, presentations, and business documents.
+          </p>
+          <div class="stats">
+            <div class="stat"><b data-count="100">0</b><span>Custom Brand Identity Design</span></div>
+            <div class="stat"><b data-count="360">0</b><span>Strategic Market Positioning</span></div>
+            <div class="stat"><b data-count="24">0</b><span>Creative Logo Concepts</span></div>
+            <div class="stat"><b data-count="100">0</b><span>Brand Consistency Focus</span></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="strategy" class="section">
+      <div class="container">
+        <div class="heading reveal">
+          <h2>Comprehensive Branding Strategy</h2>
+          <p>
+            As a trusted branding company and full-service branding studio, our team collaborates closely with you to define a tailored strategy aligned with your goals.
+            From market research and competitor analysis to messaging and visual identity, we deliver a cohesive brand system that connects with your audience.
+          </p>
+        </div>
+        <div class="grid-3">
+          <article class="feature reveal">
+            <h3>Market Research</h3>
+            <p>We identify industry opportunities, audience behavior, and category trends to build your brand on insight, not guesswork.</p>
+          </article>
+          <article class="feature reveal">
+            <h3>Brand Messaging</h3>
+            <p>We craft clear positioning, tone of voice, and value communication so your brand speaks with confidence and consistency.</p>
+          </article>
+          <article class="feature reveal">
+            <h3>Visual Identity</h3>
+            <p>From logos to typography and color systems, we design versatile assets that keep your business recognizable across all channels.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="heading reveal">
+          <h2>Best Logo Design Services Near You</h2>
+          <p>
+            Looking to create a logo that perfectly represents your business? Our expert branding designers create distinctive logo concepts,
+            whether you need a complete rebrand, a modern refresh, or a new identity launch.
+          </p>
+        </div>
+        <div class="process">
+          <article class="step reveal" data-step="01">
+            <h4>Discovery Call</h4>
+            <p>We understand your business, mission, target market, and brand personality.</p>
+          </article>
+          <article class="step reveal" data-step="02">
+            <h4>Competitive Review</h4>
+            <p>We evaluate competing visuals and identify unique differentiation opportunities.</p>
+          </article>
+          <article class="step reveal" data-step="03">
+            <h4>Concept Design</h4>
+            <p>We present custom concepts tailored to your brand direction and corporate positioning.</p>
+          </article>
+          <article class="step reveal" data-step="04">
+            <h4>Refinement</h4>
+            <p>We refine chosen concepts, ensuring balance, readability, and multi-channel adaptability.</p>
+          </article>
+          <article class="step reveal" data-step="05">
+            <h4>Delivery Kit</h4>
+            <p>You receive final files and brand-ready assets for web, print, and social platforms.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="heading reveal">
+          <h2>Why Choose Best Web Developer as Your Branding Studio?</h2>
+        </div>
+        <div class="accordion reveal" aria-label="why choose us">
+          <div class="qa active">
+            <button type="button">Proven Expertise as a Leading Branding Company <span>+</span></button>
+            <div class="answer">We combine design excellence with strategic thinking to create brand identities that perform in real business environments.</div>
+          </div>
+          <div class="qa">
+            <button type="button">Creative and Strategic Approach to Every Project <span>+</span></button>
+            <div class="answer">Every decision is backed by research, audience understanding, and practical business objectives.</div>
+          </div>
+          <div class="qa">
+            <button type="button">Unique, Custom Logo Designs Tailored to Your Brand <span>+</span></button>
+            <div class="answer">No templates, no generic ideas—only tailored visual identity solutions built around your brand DNA.</div>
+          </div>
+          <div class="qa">
+            <button type="button">End-to-End Branding Solutions from Concept to Implementation <span>+</span></button>
+            <div class="answer">From discovery to delivery, we support a complete brand journey with clarity and consistency.</div>
+          </div>
+          <div class="qa">
+            <button type="button">Dedicated Team Committed to Brand Success <span>+</span></button>
+            <div class="answer">We work as your long-term branding partner to maintain quality and strengthen your identity over time.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="glass cta reveal">
+          <div>
+            <h3>Ready to Elevate Your Brand?</h3>
+            <p>
+              Partner with Best Web Developer, your trusted branding designer and creative partner.
+              Let us build a strong, memorable, and professional corporate brand identity for your business.
+            </p>
+          </div>
+          <div class="actions">
+            <a class="btn btn-primary" href="tel:+966510451995">Call: +966510451995</a>
+            <a class="btn btn-secondary" href="https://bestwebdeveloper.org" target="_blank" rel="noopener">Visit bestwebdeveloper.org</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Best Web Developer · Expert Branding Designer & Logo Design Services
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const reveals = document.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    reveals.forEach((item) => observer.observe(item));
+
+    const counters = document.querySelectorAll("[data-count]");
+    const runCounter = (element) => {
+      const target = Number(element.dataset.count);
+      let current = 0;
+      const step = Math.max(1, Math.ceil(target / 40));
+      const timer = setInterval(() => {
+        current += step;
+        if (current >= target) {
+          current = target;
+          clearInterval(timer);
+        }
+        element.textContent = current + "%";
+      }, 28);
+    };
+
+    const statsCard = document.querySelector(".stats");
+    if (statsCard) {
+      const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            counters.forEach(runCounter);
+            statsObserver.disconnect();
+          }
+        });
+      }, { threshold: 0.3 });
+      statsObserver.observe(statsCard);
+    }
+
+    document.querySelectorAll(".qa button").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const parent = btn.parentElement;
+        document.querySelectorAll(".qa").forEach((box) => {
+          if (box !== parent) box.classList.remove("active");
+        });
+        parent.classList.toggle("active");
+      });
+    });
+  </script>
+</body>
+</html>
