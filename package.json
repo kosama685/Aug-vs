@@ -1,0 +1,17 @@
+{
+  "name": "aug-agent-monorepo",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Open-source coding agent extension with browser-session authenticated multi-LLM support",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run -ws build",
+    "typecheck": "npm run -ws typecheck",
+    "lint": "npm run -ws lint"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
