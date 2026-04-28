@@ -1,0 +1,8 @@
+services:
+  ollama:
+    image: ollama/ollama:latest
+    ports: ["11434:11434"]
+  server:
+    build: .
+    command: pnpm --filter @aug-vs/server dev
+    ports: ["3001:3001"]

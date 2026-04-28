@@ -1,0 +1,8 @@
+{
+  "defaultProvider": "mock",
+  "defaultModel": "mock-default",
+  "retrievalBudgetTokens": 8000,
+  "terminalApprovalPolicy": "always",
+  "telemetry": { "enabled": false },
+  "server": { "host": "localhost", "port": 3001 }
+}
