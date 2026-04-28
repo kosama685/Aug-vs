@@ -1,0 +1,31 @@
+{
+  "defaultProvider": "mock",
+  "defaultModel": "mock-coder-v1",
+  "retrievalBudgetTokens": 8000,
+  "indexing": {
+    "maxFileSizeBytes": 512000,
+    "includeLockfiles": false
+  },
+  "ignoredPaths": ["node_modules", ".git", ".venv", "dist", "build", "vendor"],
+  "terminalApprovalPolicy": "on-risky",
+  "safeCommands": ["pnpm test", "pnpm typecheck", "git status", "git diff"],
+  "enabledTools": [
+    "retrieve_context",
+    "read_file",
+    "write_patch",
+    "terminal",
+    "git_status",
+    "git_diff",
+    "git_branch",
+    "git_stage",
+    "git_commit",
+    "memory_read",
+    "memory_update",
+    "mcp_call"
+  ],
+  "mcpServers": {},
+  "telemetry": {
+    "enabled": false,
+    "collectCode": false
+  }
+}

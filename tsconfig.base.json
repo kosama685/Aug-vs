@@ -4,12 +4,11 @@
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
     "strict": true,
-    "resolveJsonModule": true,
     "declaration": true,
     "sourceMap": true,
-    "outDir": "dist",
     "esModuleInterop": true,
     "skipLibCheck": true,
+    "resolveJsonModule": true,
     "types": ["node"]
   }
 }

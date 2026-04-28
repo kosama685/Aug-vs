@@ -1,6 +1,7 @@
-node_modules
-dist
-.vscode-test
-coverage
+node_modules/
+dist/
+out/
+coverage/
+.pnpm-store/
+.vscode-test/
 *.log
-.agent/sessions
